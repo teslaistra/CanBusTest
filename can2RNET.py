@@ -70,8 +70,9 @@ def build_frame(canstr):
     else:
         print('build_frame: cansend data format error: ' + canstr)
         return 'Err!'
-    print(map(ord, canid+struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat))
-    return canid+struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat
+    print(map(ord, struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat))
+    
+    return struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat
 
 
 def dissect_frame(frame):
