@@ -320,6 +320,7 @@ def send_joystick_canframe(s,joy_id):
         priorjoyy=joyy
         while rnet_threads_running:
                 joyframe = joy_id+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
+                print(joyframe)
                 cansend(s,joyframe)
                 nexttime += mintime
                 t= time()
