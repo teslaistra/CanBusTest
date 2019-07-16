@@ -45,10 +45,7 @@ def build_frame(canstr):
     cansplit = canstr.split('#')
     lcanid = len(cansplit[0])
     RTR = '#R' in canstr
-    if lcanid != 3 or lcanid != 8:
-        print (lcanid)
-        print('build_frame: cansend frame id format error: ' + canstr)
-        return 'Err!'
+
     len_datstr = len(cansplit[1])
     if not RTR and len_datstr <= 16 and not len_datstr & 1:
         candat = binascii.unhexlify(cansplit[1])
