@@ -143,8 +143,13 @@ class X360:
 
         # Get the device name.
         #buf = bytearray(63)
-        buf = bytearray([0] * 64)
-        ioctl(jsdev, 0x80006a13 + (0x10000 * len(buf)), buf) # JSIOCGNAME(len)
+
+        buf = array.array('h', [0] * 64)
+        # buf = bytearray([0] * 64)
+
+        ioctl(jsdev, 0x80006a13 + (0x10000 * len(buf)), buf)
+
+
         js_name = buf
 
         if debug:
@@ -229,7 +234,7 @@ class X360:
             speed_range = 0
             global joyevent
             joypacketinterval = .01
-            joyipsocketthread = threading.Thread(target=x360.joyipsocketthread,args=(ipsocket,joypacketinterval,),daemon = True)
+            joyipsocketthread = threading.Thread(target=x360.joyipsocketthread,args=(ipsocket,joypacketinterval,))
             joyipsocketthread.start()
             running = True
             while running and joyipsocketthread.isAlive():
@@ -391,11 +396,11 @@ if __name__ == "__main__":
             while threading.active_count() > 0:
                 conn, addr = ipsocket.accept()
                 print ('Connected to ' + addr[0] +':' +str(addr[1]))
-                socket_to_joy_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,),daemon = True)
+                socket_to_joy_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,))
                 socket_to_joy_thread.start()
         else:
             if jsdev != '':
-                joy_to_socket_thread = threading.Thread(target=x360.socketjoyserverthread,args=(ipsocket,jsdev,),daemon = True)
+                joy_to_socket_thread = threading.Thread(target=x360.socketjoyserverthread,args=(ipsocket,jsdev,))
                 joy_to_socket_thread.start()
             
         while threading.active_count() > 0 and joy_to_socket_thread.isAlive():
