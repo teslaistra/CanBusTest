@@ -78,7 +78,7 @@ def dissect_frame(frame):
 
 def cansend(s,cansendtxt):
 
-    cansplit = canstr.split('#')
+    cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
         s.send(arbitration_id=cansplit[0], data=out, is_extended_id=True)
