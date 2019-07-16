@@ -6,9 +6,9 @@ channel = 'can0'
 
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
-print(map(ord, msg.data))
-print(map(ord, msg.arbitration_id))
-
+#print(map(ord, msg.data))
+#print(map(ord, msg.arbitration_id))
+print(msg.data)
 stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
 
 bus.send(stop)
