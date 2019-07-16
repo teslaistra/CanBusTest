@@ -399,12 +399,12 @@ if __name__ == "__main__":
             joyy = 0
             if jsdev != '':
                 print('using Joystick attached: ' + str(jsdev).split("'")[1])
-                joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,),daemon=True)
+                joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,))
                 joyreadthread.start()
                 joy_id = RNET_JSMerror_exploit(cansocket)
                 speed_range = 00
                 RNETsetSpeedRange(cansocket,speed_range)
-                sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,),daemon=True)
+                sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
                 sendjoyframethread.start()
                 sleep(0.5)
                 watch_and_wait()
@@ -461,12 +461,12 @@ if __name__ == "__main__":
                 joyreadthread.start()
 
             joy_id = RNET_JSMerror_exploit(cansocket)
-            playsongthread = threading.Thread(target=RNETplaysong,args=(cansocket,),daemon = True)
+            playsongthread = threading.Thread(target=RNETplaysong,args=(cansocket,))
             speed_range = 00
             RNETsetSpeedRange(cansocket,speed_range)
 
 
-            sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,),daemon=True)
+            sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
             sendjoyframethread.start()
             playsongthread.start()
 
@@ -488,11 +488,11 @@ if __name__ == "__main__":
                 print ('Connected with ' + addr[0] +':' +str(addr[1]))
                 ipsocket.settimeout(0.5)
                 ipsocket.setblocking(0)
-                socket_to_joy_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,cansocket,ipsocket),daemon = True)
+                socket_to_joy_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,cansocket,ipsocket))
                 socket_to_joy_thread.start()
             else:
                 if jsdev != '':
-                    joy_to_socket_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,),daemon = True)
+                    joy_to_socket_thread = threading.Thread(target=x360.socketjoyclientthread,args=(conn,))
                     joy_to_socket_thread.start()
 
             watch_and_wait()
