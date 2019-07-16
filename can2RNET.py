@@ -23,7 +23,7 @@ import sys
 from time import *
 import binascii #used in build_frame
 import threading
-
+import can
 #all functions take CAN messages as a string in "CANSEND" (from can-utils) format
 """
 FORMAT FOR CANSEND (matches candump -l)
@@ -39,21 +39,27 @@ e.g. 5A1#11.2233.44556677.88 / 123#DEADBEEF / 5AA# / 123##1 / 213##311
 """
 
 def build_frame(canstr):
-    #RTR='#R' in canstr
-    can_dlc = 0
-    len_datstr = len(canstr)
-    if len_datstr<=16 and not len_datstr & 1:
-        candat = binascii.unhexlify(canstr)
-        can_dlc = len(candat)
-        candat = candat.ljust(8,b'\x00')
-    elif not len_datstr or RTR:
-        candat = b'\x00\x00\x00\x00\x00\x00\x00\x00'
-    else:
-        print('build_frame: cansend data format error: ' + canstr)
+    if not '#' in canstr:
+        print('build_frame: missing #')
         return 'Err!'
-    print(map(ord, struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat))
+
+    cansplit = canstr.split('#')
+    lcanid = len(cansplit[0])
+    RTR = '#R' in canstr
+    if lcanid != 3 or lcanid != 8:
+        print('build_frame: cansend frame id format error: ' + canstr)
+        return 'Err!'
+    len_datstr = len(cansplit[1])
+    if not RTR and len_datstr <= 16 and not len_datstr & 1:
+        candat = binascii.unhexlify(cansplit[1])
+        candat = candat.ljust(8, b'\x00')
+    elif not len_datstr or RTR:
+        candat = ''
+    else:
+        print ('build_frame: cansend data format error: ' + canstr)
+        return 'Err!'
     
-    return struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat
+    return map(ord, candat)
 
 
 def dissect_frame(frame):
@@ -72,12 +78,12 @@ def dissect_frame(frame):
     return (can_idtxt + '#'+''.join(["%02X" % x for x in data[:can_dlc]]) + 'R'*rtr)
 
 def cansend(s,cansendtxt):
-    try:
-        out=build_frame(cansendtxt)
-        if out != 'Err!':
-            s.send(out)
-    except socket.error:
-        print('Error sending CAN frame ' + cansendtxt)
+
+    cansplit = canstr.split('#')
+    out=build_frame(cansendtxt)
+    if out != 'Err!':
+        s.send(arbitration_id=cansplit[0], data=out, is_extended_id=True)
+
 
 def canrepeat_stop(thread):
     thread._stop = True
@@ -121,19 +127,7 @@ def canwaitRTR(s,canfiltertxt):
     return cf
 
 def opencansocket(busnum):
-    busnum=str(busnum)
-    #open socketcan connection
-    try:
-        cansocket = socket.socket(socket.AF_CAN, socket.SOCK_RAW, socket.CAN_RAW)
-        cansocket.bind(('can'+busnum,))
-        print('socket connected to can'+busnum)
-    except socket.error:
-        print ('Failed to open can'+busnum+' socket')
-        print ('Attempting to open vcan'+busnum+' socket')
-        try:
-            cansocket.bind(('vcan'+busnum,))
-            print('socket connected to vcan'+busnum)
-        except:
-            print ('Failed to open vcan'+busnum+' socket')
-            cansocket = ''
-    return cansocket
+    busnum='can'+str(busnum)
+    bus = can.interface.Bus(channel = busnum, bustype='socketcan')
+    print ("connected to CAN")
+    return bus
