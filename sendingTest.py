@@ -17,6 +17,6 @@ bus.send(stop)
 bus.send(stop)
 
 #str = build_frame("181C0100#105a205b00000000")
-time.sleep(10)
+
 msg = can.Message(arbitration_id=0x0c040100, is_extended_id=False)
 bus.send(msg)
