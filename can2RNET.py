@@ -79,6 +79,8 @@ def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
+        print(cansplit[0])
+        print(out)
         msg = can.Message(arbitration_id=cansplit[0], data=out, is_extended_id=True)
         s.send(msg)
 
