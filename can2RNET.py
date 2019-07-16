@@ -42,7 +42,6 @@ def build_frame(canstr):
     if not '#' in canstr:
         print('build_frame: missing #')
         return 'Err!'
-
     cansplit = canstr.split('#')
     lcanid = len(cansplit[0])
     RTR = '#R' in canstr
