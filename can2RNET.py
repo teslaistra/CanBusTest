@@ -79,7 +79,8 @@ def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
-        s.send(arbitration_id=cansplit[0], data=out, is_extended_id=True)
+        msg = can.Message(arbitration_id=cansplit[0], data=out, is_extended_id=True)
+        s.send(msg)
 
 
 def canrepeat_stop(thread):
