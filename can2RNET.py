@@ -39,30 +39,11 @@ e.g. 5A1#11.2233.44556677.88 / 123#DEADBEEF / 5AA# / 123##1 / 213##311
 """
 
 def build_frame(canstr):
-    if not '#' in canstr:
-        print('build_frame: missing #')
-        return 'Err!'
-
-    cansplit=canstr.split('#')
-    lcanid=len(cansplit[0])
-    RTR='#R' in canstr
-    if lcanid == 3:
-
-        canid=struct.pack('I',int(cansplit[0],16)+0x40000000*RTR)        
-    elif lcanid == 8:
-       # print ('8')
-       # print (int(cansplit[0], 16))
-       # print (0x80000000+0x40000000*RTR)
-      ##  print(0x40000000)
-       # print (int(cansplit[0],16)+0x80000000+0x40000000*RTR)
-        canid=struct.pack('I',int(cansplit[0],16)+0x80000000+0x40000000*RTR)
-    else:
-        print ('build_frame: cansend frame id format error: ' + canstr)
-        return 'Err!'
+    #RTR='#R' in canstr
     can_dlc = 0
-    len_datstr = len(cansplit[1])
-    if not RTR and len_datstr<=16 and not len_datstr & 1:
-        candat = binascii.unhexlify(cansplit[1]) 
+    len_datstr = len(canstr)
+    if len_datstr<=16 and not len_datstr & 1:
+        candat = binascii.unhexlify(canstr)
         can_dlc = len(candat)
         candat = candat.ljust(8,b'\x00')
     elif not len_datstr or RTR:
