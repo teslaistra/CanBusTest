@@ -24,7 +24,7 @@ while 0==0:
 	if binascii.hexlify(msg.data)[0:2] == "9c":
 		print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sleep(5)
-		msg.data=[156,0,0,0,0,0,0,0]
+		msg.data=[100,0,0,0,0,0,0,0]
 		bus.send(msg)
 		sleep(1)
 		break;
