@@ -115,7 +115,7 @@ def cansend(s,cansendtxt):
     out=build_frame(cansendtxt)
     if out != 'Err!':
 
-        msg = can.Message(arbitration_id=map(ord,out)[0:7], data=map(ord, out)[8:15], is_extended_id=True)
+        msg = can.Message(arbitration_id=map(ord,out)[0:4], data=map(ord, out)[8:15], is_extended_id=True)
         s.send(msg)
 
 
