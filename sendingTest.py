@@ -27,6 +27,7 @@ while 0==0:
 		print("sending original message")
 		print(binascii.hexlify(msg.data))
 		bus.send(msg)
+		sleep(5)
 		print("now will build same message by my own")
 		msg.data=build_frame("123#"+binascii.hexlify(msg.data))
 		print(binascii.hexlify(msg.data))
