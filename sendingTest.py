@@ -24,10 +24,9 @@ while 0==0:
 	if binascii.hexlify(msg.data)[0:2] == "9c":
 		print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sleep(5)
-
+		print(binascii.hexlify(msg.data))
 		msg.data=build_frame("123#"+binascii.hexlify(msg.data))
 		print(binascii.hexlify(msg.data))
-
 		bus.send(msg)
 		sleep(1)
 		break;
