@@ -10,6 +10,7 @@ msg = bus.recv()
 #print(map(ord, msg.arbitration_id))
 print(msg.arbitration_id)
 #stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
+#
 while 0==0:
 	msg = bus.recv()
 	if(msg.arbitration_id == 33554432):
