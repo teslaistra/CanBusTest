@@ -25,7 +25,7 @@ from can2RNET import *
 
 
 debug = True
-
+#
 
 #JoyLocal.py - Translate USB joystick x/y axis to Rnet and inject onto canbus
 class X360:
