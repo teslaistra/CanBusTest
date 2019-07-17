@@ -19,6 +19,7 @@ while 1==0:
 		print(binascii.hexlify(msg.data))
 while 0==0:
 	msg = bus.recv()
+	print(binascii.hexlify(msg.data)[0:1])
 
 	if binascii.hexlify(msg.data)[0:1] == "9d":
 		print("got!")
