@@ -11,14 +11,12 @@ msg = bus.recv()
 print(msg.arbitration_id)
 #stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
 #
-for msg in bus:
-		print(msg.data)
-		print (binascii.hexlify(msg.data))
+
 while 0==0:
 
 	msg = bus.recv()
 	if(msg.arbitration_id == 33554432):
-		print(map(ord,msg.data))
+		print(binascii.hexlify(msg.data))
 
 #bus.send(stop)
 #bus.send(stop)
