@@ -111,7 +111,7 @@ def canwait(s,canfiltertxt):
     cancheckint = 0
     while cancheckint != canidint:
         msg = s.recv()
-        
+        print(msg.arbitration_id)
         cancheckint =  map(ord,msg.arbitration_id) & mask
     return map(ord,msg.arbitration_id)
 
