@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a47d46-09b5-4a68-ad96-ae2fdf1f9a55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/can2RNET.py" beforeDir="false" afterPath="$PROJECT_DIR$/can2RNET.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendingTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/sendingTest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/can2RNET.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
@@ -54,7 +54,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JoyLocalDeBag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-396" />
+            <state relative-caret-position="264">
+              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -63,10 +65,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sendingTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="440">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -86,6 +89,8 @@
         <option value="$USER_HOME$/can2Print/JoyClient.py" />
         <option value="$USER_HOME$/can2Print/can2RNET.py" />
         <option value="$PROJECT_DIR$/can2RNET.py" />
+        <option value="$PROJECT_DIR$/JoyLocalDeBag.py" />
+        <option value="$PROJECT_DIR$/sendingTest.py" />
       </list>
     </option>
   </component>
@@ -127,7 +132,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/can2Print/JoyClient.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sendingTest.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -159,23 +164,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563353724821</updated>
-      <workItem from="1563353726308" duration="14005000" />
+      <workItem from="1563353726308" duration="14315000" />
     </task>
+    <task id="LOCAL-00001" summary="V1">
+      <created>1563373061831</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563373061831</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14005000" />
+    <option name="totallyTimeSpent" value="14315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2498618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2498618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32925585" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -196,24 +209,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JoyServerLeftStick.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sendingTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JoyLocalDeBag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/can2Print/JoyClient.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3366">
@@ -242,6 +242,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JoyLocalDeBag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JoyServerLeftStick.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sendingTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

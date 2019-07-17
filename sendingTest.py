@@ -12,7 +12,13 @@ print(msg.arbitration_id)
 #stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
 while 0==0:
 	msg = bus.recv()
+	print("id")
+
 	print(msg.arbitration_id)
+
+	print("data")
+
+	print(msg.data)
 #bus.send(stop)
 #bus.send(stop)
 
