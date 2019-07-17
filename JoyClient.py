@@ -7,6 +7,7 @@ from fcntl import ioctl
 import select
 import threading
 from can2RNET import *
+import signal
 debug = False
 
 host = '' #server='192.168.10.55'  client = ''
@@ -350,11 +351,11 @@ def induce_JSM_error(cansocket):
 
 def RNET_JSMerror_exploit(cansocket):
         print("Waiting for JSM heartbeat")
-        #canwait(cansocket,"03C30F0F:1FFFFFFF")
+        canwait(cansocket,"03C30F0F:1FFFFFFF")
         t=time()+0.20
         print("Waiting for joy frame")
-        #joy_id = wait_joystickframe(cansocket,t)   #need to be rewritten using CAN lib
-        joy_id = "02000100" #may work only for exact wheelchair
+        joy_id = wait_joystickframe(cansocket,t)   #need to be rewritten using CAN lib
+        #joy_id = "02000100" #may work only for exact wheelchair
         print("Using joy frame: "+joy_id)
         induce_JSM_error(cansocket)
         print("3 x 0c000000# sent")
@@ -384,6 +385,10 @@ def kill_rnet_threads():
     rnet_threads_running = False
     cansocket.shutdown()
 
+def keyboardInterruptHandler(signal, frame):
+    print("KeyboardInterrupt (ID: {}) has been caught. Cleaning up...".format(signal))
+    cansocket.shutdown()
+    exit(0)
 
 if __name__ == "__main__":
         global rnet_threads_running
