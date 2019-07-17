@@ -318,7 +318,7 @@ def send_joystick_canframe(s,joy_id):
         nexttime = time() + mintime
         priorjoyx=joyx
         priorjoyy=joyy
-        cansend(s,"123#R")
+        cansend(s,"123#")
 
         while rnet_threads_running:
                 joyframe = joy_id+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
@@ -337,9 +337,8 @@ def send_joystick_canframe(s,joy_id):
 def wait_joystickframe(cansocket,t):
     frameid = ''
     while frameid[0:3] != '020':  #just look for joystick frame ID (no extended frame)
-        cf, addr = cansocket.recvfrom(16)
-        candump_frame = dissect_frame(cf)
-        frameid = candump_frame.split('#')[0]
+        msg = cansocket.recv()
+        frameid = msg.arbitration_id
         if t>time():
              print("JoyFrame wait timed out ")
              return('02000100')
@@ -383,7 +382,7 @@ def watch_and_wait():
 def kill_rnet_threads():
     global rnet_threads_running
     rnet_threads_running = False
-
+    cansocket.shutdown()
 
 
 if __name__ == "__main__":
@@ -498,6 +497,7 @@ if __name__ == "__main__":
                     joy_to_socket_thread.start()
 
             watch_and_wait()
+            cansocket.shutdown()
             ipsocket.close()
         kill_rnet_threads()
         print("Exiting")

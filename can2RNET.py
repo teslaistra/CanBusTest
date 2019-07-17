@@ -79,7 +79,6 @@ def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
-
         msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True)
         s.send(msg)
 
@@ -99,7 +98,7 @@ def canrepeatThread(s,cansendtxt,interval):
     print(str(threading.currentThread())+' stopped')
 
 def canrepeat(s,cansendtxt,interval): #interval in ms
-    t = threading.Thread(target=canrepeatThread,args=(s,cansendtxt,interval),daemon=True)
+    t = threading.Thread(target=canrepeatThread,args=(s,cansendtxt,interval))
     t._stop = False #threading.Event()
     t.start()
     print('Starting thread: ' + cansendtxt + ' ' +str(interval))
@@ -111,8 +110,11 @@ def canwait(s,canfiltertxt):
     mask = int(can_idf_split[1],16)
     cancheckint = 0
     while cancheckint != canidint:
-        cf, addr = s.recvfrom(16)
-        cancheckint = struct.unpack("I", cf[:4])[0] & mask
+        
+        cf, addr = s.recv()
+        msg = s.recv()
+        
+        cancheckint =  map(ord,msg.arbitration_id) & mask
     return cf
 
 def canwaitRTR(s,canfiltertxt):
