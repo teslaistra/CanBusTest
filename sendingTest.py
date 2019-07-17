@@ -35,6 +35,17 @@ while 0==0:
 		bus.send(msg)
 		print("done")
 		sleep(5)
+
+		print("now will build another message by my own and send it for 1 sec")
+		msg.data = build_frame("123#" + binascii.hexlify(msg.data))
+		print(binascii.hexlify(msg.data))
+		print("sending my own message")
+		time1 = time() + 1
+		while time > time():
+			bus.send(msg)
+
+		print("done")
+		sleep(5)
 		break;
 
 
