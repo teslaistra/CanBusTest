@@ -18,7 +18,7 @@ while 0==0:
 
 	print("data")
 
-	print(msg.data)
+	print(map(ord,msg.data))
 #bus.send(stop)
 #bus.send(stop)
 
