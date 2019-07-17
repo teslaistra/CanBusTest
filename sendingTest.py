@@ -21,7 +21,7 @@ while 0==0:
 	msg = bus.recv()
 	print(binascii.hexlify(msg.data)[0:2])
 
-	if binascii.hexlify(msg.data)[0:1] == "9c":
+	if binascii.hexlify(msg.data)[0:2] == "9c":
 		print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sleep(5)
 		bus.send(msg)
