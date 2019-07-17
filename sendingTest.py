@@ -18,11 +18,14 @@ while 1==0:
 	if(msg.arbitration_id == 33554432):
 		print(binascii.hexlify(msg.data))
 while 0==0:
+	msg = bus.recv()
+
 	if binascii.hexlify(msg.data)[0:1] == "9d":
+		print("got!")
 		sleep(5)
 		bus.send(msg)
 		sleep(1)
-		break; 
+		break;
 
 
 #bus.send(stop)
