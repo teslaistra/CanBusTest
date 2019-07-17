@@ -26,6 +26,8 @@ while 0==0:
 		sleep(5)
 
 		msg.data=build_frame("123#"+binascii.hexlify(msg.data))
+		print(binascii.hexlify(msg.data))
+
 		bus.send(msg)
 		sleep(1)
 		break;
