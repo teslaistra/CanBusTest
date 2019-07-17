@@ -322,7 +322,7 @@ def send_joystick_canframe(s,joy_id):
         cansend(s,"123#")
 
         while rnet_threads_running:
-                joyframe = hex(joy_id)+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
+                joyframe = joy_id+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
                 print(joyframe)
                 cansend(s,joyframe)
                 nexttime += mintime
