@@ -1,9 +1,10 @@
 import time
 import can
+import system
 from can2RNET import *
 bustype = 'socketcan'
 channel = 'can0'
-
+import binascii
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 #print(map(ord, msg.data))
@@ -13,6 +14,7 @@ print(msg.arbitration_id)
 #
 for msg in bus:
 		print(msg.data)
+		print (binascii.hexlify(msg.data))
 while 0==0:
 
 	msg = bus.recv()
