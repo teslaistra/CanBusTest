@@ -38,7 +38,7 @@ e.g. 5A1#11.2233.44556677.88 / 123#DEADBEEF / 5AA# / 123##1 / 213##311
      1F334455#1122334455667788 / 123#R for remote transmission request.
 """
 
-def build_frame(canstr):
+def build_frameBr(canstr):
     if not '#' in canstr:
         print('build_frame: missing #')
         return 'Err!'
@@ -58,6 +58,40 @@ def build_frame(canstr):
     print("candat:")
     print(candat)
     return map(ord, candat)
+
+
+def build_frame(canstr):
+    if not '#' in canstr:
+        print('build_frame: missing #')
+        return 'Err!'
+
+    cansplit=canstr.split('#')
+    lcanid=len(cansplit[0])
+    RTR='#R' in canstr
+    if lcanid == 3:
+        canid=struct.pack('I',int(cansplit[0],16)+0x40000000*RTR)
+    elif lcanid == 8:
+        canid=struct.pack('I',int(cansplit[0],16)+0x80000000+0x40000000*RTR)
+    else:
+        print ('build_frame: cansend frame id format error: ' + canstr)
+        return 'Err!'
+    can_dlc = 0
+    len_datstr = len(cansplit[1])
+    if not RTR and len_datstr<=16 and not len_datstr & 1:
+        candat = binascii.unhexlify(cansplit[1])
+        can_dlc = len(candat)
+        candat = candat.ljust(8,b'\x00')
+    elif not len_datstr or RTR:
+        candat = b'\x00\x00\x00\x00\x00\x00\x00\x00'
+    else:
+        print ('build_frame: cansend data format error: ' + canstr)
+        return 'Err!'
+    print(canid)
+    print(struct.pack("B",can_dlc&0xF))
+    print(b'\x00\x00\x00')
+    print(candat)
+    print ()
+    return canid+struct.pack("B",can_dlc&0xF)+b'\x00\x00\x00'+candat
 
 
 def dissect_frame(frame):
@@ -80,9 +114,8 @@ def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
-        print("arb  id:")
-        print(int(cansplit[0],16))
-        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True)
+
+        msg = can.Message(arbitration_id=map(ord,out)[0:7], data=map(ord, out)[8:15], is_extended_id=True)
         s.send(msg)
 
 
