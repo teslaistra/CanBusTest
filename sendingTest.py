@@ -1,6 +1,5 @@
 import time
 import can
-import system
 from can2RNET import *
 bustype = 'socketcan'
 channel = 'can0'
