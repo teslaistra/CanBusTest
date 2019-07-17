@@ -24,11 +24,16 @@ while 0==0:
 	if binascii.hexlify(msg.data)[0:2] == "9c":
 		print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sleep(5)
-		print(binascii.hexlify(msg.data))
-		msg.data=build_frame("123#"+binascii.hexlify(msg.data))
+		print("sending original message")
 		print(binascii.hexlify(msg.data))
 		bus.send(msg)
-		sleep(1)
+		print("now will build same message by my own")
+		msg.data=build_frame("123#"+binascii.hexlify(msg.data))
+		print(binascii.hexlify(msg.data))
+		print("sending my own message")
+		bus.send(msg)
+		print("done")
+		sleep(5)
 		break;
 
 
@@ -37,20 +42,6 @@ while 0==0:
 
 #bus.send(stop)
 
-#str = build_frame("181C0100#105a205b00000000")
-
-msg = can.Message(arbitration_id=0x0c040100, is_extended_id=True)
-bus.send(msg)
-sleep(0.5)
-msg = can.Message(arbitration_id=0x0c040101, is_extended_id=True)
-bus.send(msg)
-
-msg = can.Message(arbitration_id=33554432, is_extended_id=True, data = [0,100,0,0])
-bus.send(msg)
+str = build_frame("181C0100#105a205b00000000")
 
 
-sleep(0.5)
-msg = can.Message(arbitration_id=0x181c0100,data = build_frame("0x181c0100#2056080010560858"), is_extended_id=True)
-bus.send(msg)
-msg = can.Message(arbitration_id=0x0c040101, is_extended_id=True)
-bus.send(msg)
