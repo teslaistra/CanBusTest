@@ -24,6 +24,7 @@ while 0==0:
 	if binascii.hexlify(msg.data)[0:2] == "9c":
 		print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sleep(5)
+		msg.data=[100,0,0,0]
 		bus.send(msg)
 		sleep(1)
 		break;
@@ -41,6 +42,11 @@ bus.send(msg)
 sleep(0.5)
 msg = can.Message(arbitration_id=0x0c040101, is_extended_id=True)
 bus.send(msg)
+
+msg = can.Message(arbitration_id=33554432, is_extended_id=True, data = [0,100,0,0])
+bus.send(msg)
+
+
 sleep(0.5)
 msg = can.Message(arbitration_id=0x181c0100,data = build_frame("0x181c0100#2056080010560858"), is_extended_id=True)
 bus.send(msg)
