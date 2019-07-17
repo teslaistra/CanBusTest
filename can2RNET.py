@@ -110,12 +110,10 @@ def canwait(s,canfiltertxt):
     mask = int(can_idf_split[1],16)
     cancheckint = 0
     while cancheckint != canidint:
-        
-        cf, addr = s.recv()
         msg = s.recv()
         
         cancheckint =  map(ord,msg.arbitration_id) & mask
-    return cf
+    return map(ord,msg.arbitration_id)
 
 def canwaitRTR(s,canfiltertxt):
     can_idf_split = canfiltertxt.split(':')
