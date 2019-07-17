@@ -57,7 +57,9 @@ def build_frame(canstr):
         return 'Err!'
     print("candat:")
     print(map(ord,candat))
-    return map(ord, candat)
+    #return map(ord, candat)
+    return candat
+
 
 
 def build_frameBr(canstr):
