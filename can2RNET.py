@@ -113,7 +113,7 @@ def canwait(s,canfiltertxt):
         msg = s.recv()
         print(msg.arbitration_id)
         cancheckint =  msg.arbitration_id & mask
-    return map(ord,msg.arbitration_id)
+    return msg.arbitration_id
 
 def canwaitRTR(s,canfiltertxt):
     can_idf_split = canfiltertxt.split(':')
