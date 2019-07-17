@@ -14,7 +14,7 @@ print(msg.arbitration_id)
 while 0==0:
 	msg = bus.recv()
 	if(msg.arbitration_id == 33554432):
-		type(msg.data)
+		print(type(msg.data))
 
 #bus.send(stop)
 #bus.send(stop)
