@@ -12,12 +12,18 @@ print(msg.arbitration_id)
 #stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
 #
 
-while 0==0:
+while 1==0:
 
 	msg = bus.recv()
 	if(msg.arbitration_id == 33554432):
 		print(binascii.hexlify(msg.data))
-		print(binascii.hexlify(msg.arbitration_id))
+while 0==0:
+	if binascii.hexlify(msg.data)[0:1] == "9d":
+		sleep(5)
+		bus.send(msg)
+		sleep(1)
+		break; 
+
 
 #bus.send(stop)
 #bus.send(stop)
