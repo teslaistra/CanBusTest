@@ -56,7 +56,7 @@ def build_frame(canstr):
         print ('build_frame: cansend data format error: ' + canstr)
         return 'Err!'
     print("candat:")
-    print(candat)
+    print(map(ord,candat))
     return map(ord, candat)
 
 
@@ -109,13 +109,13 @@ def dissect_frame(frame):
     can_idtxt = '{:08x}'.format(can_id & 0x1FFFFFFF)[-idl:]
     return (can_idtxt + '#'+''.join(["%02X" % x for x in data[:can_dlc]]) + 'R'*rtr)
 
-def cansend(s,cansendtxt):
+def cansend(s,cansendtxt,remote = False):
 
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
 
-        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True,is_remote_frame=False)
+        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True,is_remote_frame=remote)
         s.send(msg)
 
 
