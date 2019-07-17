@@ -339,7 +339,7 @@ def wait_joystickframe(cansocket,t):
     frameid = ''
     while frameid[0:3] != '020':  #just look for joystick frame ID (no extended frame)
         msg = cansocket.recv()
-        frameid = msg.arbitration_id
+        frameid = msg.arbitration_id #id is always != 02, need to read correctly!
         if t>time():
              print("JoyFrame wait timed out ")
              return('02000100')
@@ -408,6 +408,7 @@ if __name__ == "__main__":
                 joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,))
                 joyreadthread.start()
                 joy_id = RNET_JSMerror_exploit(cansocket)
+                cansocket.send("123#R")
                 speed_range = 00
                 RNETsetSpeedRange(cansocket,speed_range)
                 sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
