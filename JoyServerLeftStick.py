@@ -402,11 +402,9 @@ if __name__ == "__main__":
             if jsdev != '':
                 joy_to_socket_thread = threading.Thread(target=x360.socketjoyserverthread,args=(ipsocket,jsdev,))
                 joy_to_socket_thread.start()
-            
         while threading.active_count() > 0 and joy_to_socket_thread.isAlive():
             sleep(0.2)
         ipsocket.close()
         print("Close ipsocket")
         
-        
-                
+
