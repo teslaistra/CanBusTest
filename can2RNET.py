@@ -38,7 +38,7 @@ e.g. 5A1#11.2233.44556677.88 / 123#DEADBEEF / 5AA# / 123##1 / 213##311
      1F334455#1122334455667788 / 123#R for remote transmission request.
 """
 
-def build_frameBr(canstr):
+def build_frame(canstr):
     if not '#' in canstr:
         print('build_frame: missing #')
         return 'Err!'
@@ -60,7 +60,7 @@ def build_frameBr(canstr):
     return map(ord, candat)
 
 
-def build_frame(canstr):
+def build_frameBr(canstr):
     if not '#' in canstr:
         print('build_frame: missing #')
         return 'Err!'
@@ -115,7 +115,7 @@ def cansend(s,cansendtxt):
     out=build_frame(cansendtxt)
     if out != 'Err!':
 
-        msg = can.Message(arbitration_id=int(out[0,4],16), data=map(ord, out)[8:15], is_extended_id=True)
+        msg = can.Message(arbitration_id=cansplit[0], data=out, is_extended_id=True,is_remote_frame=True)
         s.send(msg)
 
 
