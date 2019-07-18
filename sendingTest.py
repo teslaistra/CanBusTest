@@ -21,6 +21,8 @@ while 0 ==0:
         if binascii.hexlify(msg.data)[0:2] == "9c":
             print ("got!")
             sleep(3)
-            bus.send(msg)
+            time1 = time() +2
+            while time1 > time():
+                bus.send(msg)
 
 
