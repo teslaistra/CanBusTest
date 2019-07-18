@@ -41,7 +41,7 @@ while 0 == 0:
 
         print("error inducing")
 
-        induce_JSM_error(bus)
+        #induce_JSM_error(bus)
         while t > time():
 
 
