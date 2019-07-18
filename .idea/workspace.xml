@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JoyClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="375" column="8" selection-start-line="375" selection-start-column="8" selection-end-line="375" selection-end-column="8" />
+            <state relative-caret-position="506">
+              <caret line="361" column="8" selection-start-line="361" selection-start-column="8" selection-end-line="361" selection-end-column="8" />
               <folding>
                 <element signature="e#97#134#0" expanded="true" />
               </folding>
@@ -173,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563353724821</updated>
       <workItem from="1563353726308" duration="24686000" />
-      <workItem from="1563440154041" duration="13308000" />
+      <workItem from="1563440154041" duration="13484000" />
     </task>
     <task id="LOCAL-00001" summary="V1">
       <created>1563373061831</created>
@@ -186,7 +186,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37994000" />
+    <option name="totallyTimeSpent" value="38170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -273,8 +273,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JoyClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="375" column="8" selection-start-line="375" selection-start-column="8" selection-end-line="375" selection-end-column="8" />
+        <state relative-caret-position="506">
+          <caret line="361" column="8" selection-start-line="361" selection-start-column="8" selection-end-line="361" selection-end-column="8" />
           <folding>
             <element signature="e#97#134#0" expanded="true" />
           </folding>
