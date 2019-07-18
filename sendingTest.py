@@ -47,7 +47,7 @@ while 0 == 0:
 
             sleep(0.001)
             c1 = build_frame("#9c")
-            c = array.array('B', c1)
+            c = struct.pack('B', c1)
             print (type(msg.data))
             print (type(c))
 
