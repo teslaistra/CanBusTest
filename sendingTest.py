@@ -54,6 +54,7 @@ while 0 == 0:
             print ("array from lib")
             c1 = build_frame("#9c00")
             c = array.array('B', c1)
+            print(binascii.hexlify(c))
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             bus.send(msg1)
             #bus.send(msg)
