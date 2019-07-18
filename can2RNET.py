@@ -57,7 +57,7 @@ def build_frame(canstr):
         return 'Err!'
     print("candat:")
     print (type(candat))
-    print(map(ord,candat))
+    print(candat)
     #return map(ord, candat)
     return candat
 
