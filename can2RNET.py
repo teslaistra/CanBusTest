@@ -24,6 +24,7 @@ from time import *
 import binascii #used in build_frame
 import threading
 import can
+import array
 #all functions take CAN messages as a string in "CANSEND" (from can-utils) format
 """
 FORMAT FOR CANSEND (matches candump -l)
@@ -117,7 +118,7 @@ def cansend(s,cansendtxt):
     out=build_frame(cansendtxt)
     if out != 'Err!':
         print(int(cansplit[0],16))
-        msg = can.Message(arbitration_id=33554432, data=out, is_extended_id=True)
+        msg = can.Message(arbitration_id=33554432, data=array.array('B', map(ord,out)), is_extended_id=True)
         s.send(msg)
 
 
