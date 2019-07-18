@@ -35,7 +35,7 @@ while 0 == 0:
 
             print(binascii.hexlify(msg.data))
 
-
+            type(msg.data)
             msg1 = can.Message(arbitration_id=33554432, data = bytearray("9c00"), is_extended_id=True)
             bus.send(msg1)
         print("done")
