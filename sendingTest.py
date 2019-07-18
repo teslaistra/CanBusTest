@@ -5,7 +5,7 @@ from can2RNET import *
 bustype = 'socketcan'
 channel = 'can0'
 import binascii
-
+import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 # print(map(ord, msg.data))
@@ -35,7 +35,7 @@ while 0 == 0:
 
 
 
-            msg1 = can.Message(arbitration_id=33554432, data = bytearray("9c00"), is_extended_id=True)
+            msg1 = can.Message(arbitration_id=33554432, data = bytearray("b\9c\00"), is_extended_id=True)
             if msg.data == msg1.data: print ("true")
             else: print("false")
             print(binascii.hexlify(msg.data))
