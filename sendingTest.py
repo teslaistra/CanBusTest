@@ -39,7 +39,7 @@ while 0 == 0:
         t = time() + 1
 
         print("error inducing")
-        #induce_JSM_error(bus)
+        induce_JSM_error(bus)
         while t > time():
             sleep(0.01)
             #a = array.array('B', build_frame("#9c"))
