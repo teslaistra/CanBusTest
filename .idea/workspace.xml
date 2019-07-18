@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sendingTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="394">
+              <caret line="38" column="88" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -170,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563353724821</updated>
       <workItem from="1563353726308" duration="24686000" />
-      <workItem from="1563440154041" duration="3662000" />
+      <workItem from="1563440154041" duration="4618000" />
     </task>
     <task id="LOCAL-00001" summary="V1">
       <created>1563373061831</created>
@@ -183,10 +183,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28348000" />
+    <option name="totallyTimeSpent" value="29304000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
@@ -267,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sendingTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="394">
+          <caret line="38" column="88" selection-start-line="38" selection-start-column="88" selection-end-line="38" selection-end-column="88" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
