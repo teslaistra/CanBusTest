@@ -49,13 +49,14 @@ def build_frame(canstr):
     len_datstr = len(cansplit[1])
     if not RTR and len_datstr <= 16 and not len_datstr & 1:
         candat = binascii.unhexlify(cansplit[1])
-        candat = candat.ljust(8, b'\x00')
+        #candat = candat.ljust(8, b'\x00')
     elif not len_datstr or RTR:
         candat = ''
     else:
         print ('build_frame: cansend data format error: ' + canstr)
         return 'Err!'
     print("candat:")
+    print (type(candat))
     print(map(ord,candat))
     #return map(ord, candat)
     return candat
