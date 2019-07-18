@@ -56,9 +56,6 @@ def build_frame(canstr):
     else:
         print ('build_frame: cansend data format error: ' + canstr)
         return 'Err!'
-    print("candat:")
-    #print (type(candat))
-    print(map(ord, candat))
     return map(ord, candat)
 
 
@@ -116,9 +113,9 @@ def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
-        print (type(out))
+        print (out)
         #print(int(cansplit[0],16))
-        msg = can.Message(arbitration_id=33554432, data=array.array('B', [out[0],out[1]]), is_extended_id=True)
+        msg = can.Message(arbitration_id=33554432, data=array.array('B', out), is_extended_id=True)
         print(binascii.hexlify(msg.data))
         print(type(msg.data))
         s.send(msg)
