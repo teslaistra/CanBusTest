@@ -111,13 +111,12 @@ def dissect_frame(frame):
     can_idtxt = '{:08x}'.format(can_id & 0x1FFFFFFF)[-idl:]
     return (can_idtxt + '#'+''.join(["%02X" % x for x in data[:can_dlc]]) + 'R'*rtr)
 
-def cansend(s,cansendtxt,remote = False):
-
+def cansend(s,cansendtxt):
     cansplit = cansendtxt.split('#')
     out=build_frame(cansendtxt)
     if out != 'Err!':
         print(int(cansplit[0],16))
-        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True,is_remote_frame=remote)
+        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True)
         s.send(msg)
 
 
@@ -161,6 +160,7 @@ def canwaitRTR(s,canfiltertxt):
     while cancheckint != canidint:
         cf, addr = s.recvfrom(16)
         cancheckint = struct.unpack("I", cf[:4])[0] & mask
+        
     return cf
 
 def opencansocket(busnum):

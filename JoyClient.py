@@ -337,13 +337,15 @@ def send_joystick_canframe(s,joy_id):
 
 def wait_joystickframe(cansocket,t):
     frameid = ''
-    while frameid[0:3] != '020':  #just look for joystick frame ID (no extended frame)
-        msg = cansocket.recv()
-        frameid = msg.arbitration_id #id is always != 02, need to read correctly!
+    msg = cansocket.recv()
+
+    while msg.arbitration_id != 33554432:  #just look for joystick frame ID (no extended frame)
+        #id is always != 02, need to read correctly!
         if t>time():
+             msg.arbitration_id = 33554432
              print("JoyFrame wait timed out ")
-             return('02000000')
-    return(frameid)
+             return(msg.arbitration_id)
+    return(msg.arbitration_id)
 
 def induce_JSM_error(cansocket):
     for i in range(0,3):
