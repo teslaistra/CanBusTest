@@ -40,8 +40,8 @@ while 0==0:
 		msg.data = build_frame("123#63")
 		print(binascii.hexlify(msg.data))
 		print("sending my own message")
-		time1 = time() + 3
-        while time1 > time():
+		t = time() + 3
+        while t > time():
             sleep(0.01)
             cansend(bus, "33554432#63")
         print("done")
