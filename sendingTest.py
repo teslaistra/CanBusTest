@@ -32,6 +32,13 @@ while 0 == 0:
         sleep(5)
         t = time() + 1
 
+
+        def induce_JSM_error(cansocket):
+            for i in range(0, 3):
+                cansend(cansocket, '0c000000#')
+
+        induce_JSM_error(bus)
+
         while t > time():
             sleep(0.01)
 
@@ -39,13 +46,6 @@ while 0 == 0:
             a = array.array('B', [0, 157])
             b = msg.data
             msg1 = can.Message(arbitration_id=33554432, data = a, is_extended_id=True)
-            if msg.data == msg1.data: print ("true")
-            else: print("false")
-            print(binascii.hexlify(msg.data))
-
-            print(binascii.hexlify(msg1.data))
-            print(type(msg.data))
-            print (type(msg1.data))
             bus.send(msg1)
         print("done")
         sleep(5)
