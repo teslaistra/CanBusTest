@@ -43,7 +43,8 @@ while 0 == 0:
         while t > time():
             sleep(0.01)
             a = array.array('B', build_frame("#9c"))
-
+            print(build_frame("#9c"))
+            print (map(ord,build_frame("#9c")))
             b = msg.data
             if a == b: print("true")
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
