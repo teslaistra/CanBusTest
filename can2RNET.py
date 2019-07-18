@@ -118,7 +118,7 @@ def cansend(s,cansendtxt):
         c = array.array('B', c1)
         msg = can.Message(arbitration_id=int(cansplit[0],16), data=c, is_extended_id=True)
         print(binascii.hexlify(msg.data))
-        print(type(msg.data))
+        print (msg.arbitration_id)
         s.send(msg)
 
 

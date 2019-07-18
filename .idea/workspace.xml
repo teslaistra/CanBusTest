@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a47d46-09b5-4a68-ad96-ae2fdf1f9a55" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/can2RNET.py" beforeDir="false" afterPath="$PROJECT_DIR$/can2RNET.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sendingTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/sendingTest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/can2RNET.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+            <state relative-caret-position="410">
+              <caret line="120" column="33" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
               <folding>
                 <element signature="e#747#760#0" expanded="true" />
               </folding>
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JoyClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="352" selection-start-line="349" selection-end-line="352" />
+            <state relative-caret-position="-1562">
+              <caret line="357" column="13" lean-forward="true" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
               <folding>
                 <element signature="e#97#134#0" expanded="true" />
               </folding>
@@ -72,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sendingTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="564">
+              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -96,9 +97,9 @@
         <option value="$USER_HOME$/can2Print/can2RNET.py" />
         <option value="$PROJECT_DIR$/JoyLocalDeBag.py" />
         <option value="$PROJECT_DIR$/JoyServerLeftStick.py" />
-        <option value="$PROJECT_DIR$/can2RNET.py" />
         <option value="$PROJECT_DIR$/JoyClient.py" />
         <option value="$PROJECT_DIR$/sendingTest.py" />
+        <option value="$PROJECT_DIR$/can2RNET.py" />
       </list>
     </option>
   </component>
@@ -173,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563353724821</updated>
       <workItem from="1563353726308" duration="24686000" />
-      <workItem from="1563440154041" duration="16266000" />
+      <workItem from="1563440154041" duration="16816000" />
     </task>
     <task id="LOCAL-00001" summary="V1">
       <created>1563373061831</created>
@@ -186,7 +187,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40952000" />
+    <option name="totallyTimeSpent" value="41502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -237,13 +238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JoyServerLeftStick.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8866">
-          <caret line="406" column="24" selection-start-line="406" selection-start-column="24" selection-end-line="406" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JoyLocalDeBag.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -251,32 +245,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/can2RNET.py">
+    <entry file="file://$PROJECT_DIR$/JoyServerLeftStick.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+        <state relative-caret-position="8866">
+          <caret line="406" column="24" selection-start-line="406" selection-start-column="24" selection-end-line="406" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sendingTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
           <folding>
-            <element signature="e#747#760#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JoyClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="352" selection-start-line="349" selection-end-line="352" />
+        <state relative-caret-position="-1562">
+          <caret line="357" column="13" lean-forward="true" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
           <folding>
             <element signature="e#97#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sendingTest.py">
+    <entry file="file://$PROJECT_DIR$/can2RNET.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+        <state relative-caret-position="410">
+          <caret line="120" column="33" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#747#760#0" expanded="true" />
           </folding>
         </state>
       </provider>

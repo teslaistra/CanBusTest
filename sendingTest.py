@@ -45,7 +45,6 @@ while 0 == 0:
             #a = array.array('B', build_frame("#9c"))
 
             a = array.array('B', [156,0])
-            print(build_frame("#9c"))
             print("arrays be hand")
             print(binascii.hexlify(a))
             b = msg.data
@@ -56,6 +55,8 @@ while 0 == 0:
             c = array.array('B', c1)
             print(binascii.hexlify(c))
             msg1 = can.Message(arbitration_id=33554432, data=c, is_extended_id=True)
+            print (msg.arbitration_id)
+            
             bus.send(msg1)
             #bus.send(msg)
         print("done")
