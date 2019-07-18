@@ -36,12 +36,12 @@ while 0 == 0:
         print(binascii.hexlify(msg.data))
         print("sending my own message")
         sleep(5)
-        t = time() + 1
+        t = time() + 3
 
         print("error inducing")
         #induce_JSM_error(bus)
         while t > time():
-            sleep(0.01)
+            sleep(0.001)
             #a = array.array('B', build_frame("#9c"))
 
             #a = array.array('B', [156,0])
