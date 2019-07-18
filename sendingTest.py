@@ -23,6 +23,7 @@ while 0 ==0:
             sleep(3)
             time1 = time() +2
             while time1 > time():
+                sleep(0.01)
                 bus.send(msg)
 
 
