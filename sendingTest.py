@@ -41,14 +41,14 @@ while 0 == 0:
 
         print("error inducing")
 
-        #induce_JSM_error(bus)
+        induce_JSM_error(bus)
         while t > time():
 
 
             sleep(0.001)
             a1 = build_frame("#9c")
-            a = array.array('B', [156,0])
-            msg.data = a
+            a = array.array('B', a1)
+            msg.data = msg.data
             bus.send(msg)
 
 
