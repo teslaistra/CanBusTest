@@ -39,7 +39,8 @@ while 0 == 0:
         t = time() + 3
 
         print("error inducing")
-        #induce_JSM_error(bus)
+
+        induce_JSM_error(bus)
         while t > time():
             sleep(0.001)
             a1 = build_frame("#9c00")
