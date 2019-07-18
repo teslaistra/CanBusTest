@@ -373,7 +373,7 @@ def RNETshortBeep(cansocket):
         cansend(cansocket,"181c0100#0260000000000000")
 
 def RNETplaysong(cansocket):
-       # cansend(cansocket,"181C0100#2056080010560858")
+        cansend(cansocket,"181C0100#2056080010560858")
         sleep(.77)
         #cansend(cansocket,"181C0100#105a205b00000000")
 
