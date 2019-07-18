@@ -45,7 +45,7 @@ while 0 == 0:
         t = time() + 3
         while t > time():
             sleep(0.01)
-            cansend(bus, "33554432#63")
+            cansend(bus, "02000000#63")
         print("done")
         sleep(5)
         break
