@@ -42,7 +42,7 @@ while 0 == 0:
         induce_JSM_error(bus)
         while t > time():
             sleep(0.01)
-            a = array.array('B', [0, 157])
+            a = array.array('B', build_frame("#9c"))
             b = msg.data
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             bus.send(msg1)
