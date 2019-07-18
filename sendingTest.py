@@ -40,7 +40,7 @@ while 0==0:
 		msg.data = build_frame("123#63")
 		print(binascii.hexlify(msg.data))
 		print("sending my own message")
-		time1 = time() + 1
+		time1 = time() + 3
 		while time1 > time():
 			sleep(0.1)
 			bus.send(msg)
