@@ -31,6 +31,7 @@ while 0 == 0:
 
     if binascii.hexlify(msg.data)[0:2] == "9c":
 
+
         print("now will build another message by my own and send it for 1 sec")
         #msg.data = build_frame("123#63")
         print(binascii.hexlify(msg.data))
@@ -40,12 +41,14 @@ while 0 == 0:
 
         print("error inducing")
 
-        induce_JSM_error(bus)
+        #induce_JSM_error(bus)
         while t > time():
+
+
             sleep(0.001)
-            a1 = build_frame("#9c00")
+            a1 = build_frame("#9c")
             a = array.array('B', a1)
-            msg = can.Message( data=a)
+            msg = can.Message(data=a)
             bus.send(msg)
 
 
@@ -67,7 +70,6 @@ while 0 == 0:
             #bus.send(msg1)
             #bus.send(msg)
         print("done")
-        sleep(5)
 
 
 # bus.send(stop)
