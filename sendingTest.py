@@ -46,8 +46,9 @@ while 0 == 0:
 
 
             sleep(0.001)
-            a1 = build_frame("#9c")
-            a = array.array('B', a1)
+            c1 = build_frame("#9c")
+            c = array.array('B', c1)
+            msg.data  =c 
             bus.send(msg)
 
 
