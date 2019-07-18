@@ -116,7 +116,7 @@ def cansend(s,cansendtxt):
     out=build_frame(cansendtxt)
     if out != 'Err!':
         print(int(cansplit[0],16))
-        msg = can.Message(arbitration_id=int(cansplit[0],16), data=out, is_extended_id=True)
+        msg = can.Message(arbitration_id=33554432, data=out, is_extended_id=True)
         s.send(msg)
 
 
