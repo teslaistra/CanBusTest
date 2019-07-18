@@ -39,8 +39,7 @@ while 0 == 0:
         t = time() + 1
 
         print("error inducing")
-        induce_JSM_error(bus)
-        sleep(5)
+        #induce_JSM_error(bus)
         while t > time():
             sleep(0.01)
             a = array.array('B', [0, 157])
