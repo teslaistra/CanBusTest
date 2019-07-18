@@ -410,7 +410,6 @@ if __name__ == "__main__":
                 joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,))
                 joyreadthread.start()
                 joy_id = RNET_JSMerror_exploit(cansocket)
-                cansocket.send("123#R")
                 speed_range = 00
                 RNETsetSpeedRange(cansocket,speed_range)
                 sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
