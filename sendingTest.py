@@ -46,9 +46,9 @@ while 0 == 0:
         while t > time():
             sleep(0.01)
             cansend(bus, "33554432#63")
-    print("done")
-    sleep(5)
-    break
+        print("done")
+        sleep(5)
+        break
 
 # bus.send(stop)
 # bus.send(stop)
