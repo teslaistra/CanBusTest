@@ -45,9 +45,10 @@ while 0 == 0:
             a = array.array('B', build_frame("#9c"))
             print(build_frame("#9c"))
             print(binascii.hexlify(a))
+            b = msg.data
             print(binascii.hexlify(b))
 
-            b = msg.data
+
             if a == b: print("true")
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             bus.send(msg1)
