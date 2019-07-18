@@ -29,7 +29,7 @@ while 0 == 0:
         #msg.data = build_frame("123#63")
         print(binascii.hexlify(msg.data))
         print("sending my own message")
-        t = time() + 3
+        t = time() + 1
         while t > time():
             sleep(0.01)
 
