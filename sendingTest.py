@@ -41,10 +41,9 @@ while 0==0:
 		print(binascii.hexlify(msg.data))
 		print("sending my own message")
 		time1 = time() + 3
-		while time1 > time():
+        while time1 > time():
             sleep(0.01)
             cansend(bus, "33554432#63")
-
         print("done")
         sleep(5)
         break
