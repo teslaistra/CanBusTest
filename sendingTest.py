@@ -18,6 +18,7 @@ while 1==0:
 	if(msg.arbitration_id == 33554432):
 		print(binascii.hexlify(msg.data))
 while 0==0:
+
 	msg = bus.recv()
 	print(binascii.hexlify(msg.data)[0:2])
 
