@@ -345,7 +345,7 @@ def wait_joystickframe(cansocket,t):
              joy_id = "33554432"
              print("JoyFrame wait timed out ")
              return(joy_id)
-    return(int(msg.arbitration_id,16))
+    return(str(msg.arbitration_id))
 
 def induce_JSM_error(cansocket):
     for i in range(0,3):
