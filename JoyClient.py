@@ -338,7 +338,7 @@ def send_joystick_canframe(s,joy_id):
 def wait_joystickframe(cansocket,t):
     frameid = ''
     msg = cansocket.recv()
-
+    print (msg.arbitration_id)
     while int(msg.arbitration_id,16) != 33554432:  #just look for joystick frame ID (no extended frame)
         #id is always != 02, need to read correctly!
         if t>time():
