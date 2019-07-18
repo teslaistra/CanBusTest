@@ -24,28 +24,16 @@ while 0 == 0:
     print(binascii.hexlify(msg.data)[0:2])
 
     if binascii.hexlify(msg.data)[0:2] == "9c":
-        print("got!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        sleep(5)
-        print("sending original message")
-        print(binascii.hexlify(msg.data))
-        bus.send(msg)
-        sleep(5)
-        print("now will build same message by my own")
-        msg.data = build_frame("123#" + binascii.hexlify(msg.data))
-        print(binascii.hexlify(msg.data))
-        print("sending my own message")
-        bus.send(msg)
-        print("done")
-        sleep(5)
-
+        
         print("now will build another message by my own and send it for 1 sec")
-        msg.data = build_frame("123#63")
+        #msg.data = build_frame("123#63")
         print(binascii.hexlify(msg.data))
         print("sending my own message")
         t = time() + 3
         while t > time():
             sleep(0.01)
-            cansend(bus, "02000000#63")
+            msg1 = can.Message(arbitration_id=33554432, data=, is_extended_id=True)
+            bus.send(msg1)
         print("done")
         sleep(5)
         break
