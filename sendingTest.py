@@ -40,12 +40,12 @@ while 0 == 0:
 
         print("error inducing")
         induce_JSM_error(bus)
-        sleep(5)
+        #sleep(5)
         while t > time():
             sleep(0.01)
             a = array.array('B', [0, 157])
             b = msg.data
-            msg1 = can.Message(arbitration_id=33554432, data=b, is_extended_id=True)
+            msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             #bus.send(msg1)
             bus.send(msg)
         print("done")
