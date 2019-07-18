@@ -36,9 +36,9 @@ while 0 == 0:
         def induce_JSM_error(cansocket):
             for i in range(0, 3):
                 cansend(cansocket, '0c000000#')
-
+        print("error inducing")
         induce_JSM_error(bus)
-
+        sleep(5)
         while t > time():
             sleep(0.01)
 
