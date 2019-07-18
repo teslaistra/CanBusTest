@@ -42,7 +42,8 @@ while 0 == 0:
         induce_JSM_error(bus)
         while t > time():
             sleep(0.01)
-            a = array.array('B', build_frame("#9c"))
+            #a = array.array('B', build_frame("#9c"))
+            a = array.array('B', [0,156])
             print(build_frame("#9c"))
             print(binascii.hexlify(a))
             b = msg.data
