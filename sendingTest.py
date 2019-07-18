@@ -38,7 +38,7 @@ while 0 == 0:
 
             a = array.array('B', [0, 156])
             b = msg.data
-            msg1 = can.Message(arbitration_id=33554432, data = b, is_extended_id=True)
+            msg1 = can.Message(arbitration_id=33554432, data = a, is_extended_id=True)
             if msg.data == msg1.data: print ("true")
             else: print("false")
             print(binascii.hexlify(msg.data))
