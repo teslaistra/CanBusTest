@@ -18,7 +18,6 @@ while 1==0:
 	if(msg.arbitration_id == 33554432):
 		print(binascii.hexlify(msg.data))
 while 0==0:
-
 	msg = bus.recv()
 	print(binascii.hexlify(msg.data)[0:2])
 
@@ -38,17 +37,17 @@ while 0==0:
 		sleep(5)
 
 		print("now will build another message by my own and send it for 1 sec")
-        print("sending my own message")
-        time1 = time() + 0.20
-        while time1 > time():
-            sleep(0.1)
-            cansend(bus,"33554432#0063")
-            bus.send(msg)
+		msg.data = build_frame("123#63")
+		print(binascii.hexlify(msg.data))
+		print("sending my own message")
+		time1 = time() + 1
+		while time1 > time():
+			sleep(0.1)
+			bus.send(msg)
 
-        print("done")
-        sleep(5)
-        break
-
+		print("done")
+		sleep(5)
+		break;
 
 
 #bus.send(stop)
