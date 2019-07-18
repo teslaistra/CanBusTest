@@ -8,6 +8,12 @@ import binascii
 import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
+
+def induce_JSM_error(cansocket):
+    for i in range(0, 3):
+        cansend(cansocket, '0c000000#')
+
+
 # print(map(ord, msg.data))
 # print(map(ord, msg.arbitration_id))
 print(msg.arbitration_id)
@@ -32,13 +38,9 @@ while 0 == 0:
         sleep(5)
         t = time() + 1
 
-
-        def induce_JSM_error(cansocket):
-            for i in range(0, 3):
-                cansend(cansocket, '0c000000#')
         print("error inducing")
-        induce_JSM_error(bus)
-        sleep(5)
+
+        #induce_JSM_error(bus)
         while t > time():
             sleep(0.01)
             ##
