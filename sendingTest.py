@@ -14,71 +14,11 @@ def induce_JSM_error(cansocket):
         cansend(cansocket, '0c000000#')
 
 
-# print(map(ord, msg.data))
-# print(map(ord, msg.arbitration_id))
-print(msg.arbitration_id)
-# stop = can.Message(arbitration_id=0x0c000000, is_extended_id=False)
-#
 
-while 1 == 0:
-
+while 0 ==0:
     msg = bus.recv()
     if (msg.arbitration_id == 33554432):
         print(binascii.hexlify(msg.data))
-while 0 == 0:
-    msg = bus.recv()
-    print(binascii.hexlify(msg.data)[0:2])
-
-    if binascii.hexlify(msg.data)[0:2] == "9c":
-
-
-        print("now will build another message by my own and send it for 1 sec")
-        #msg.data = build_frame("123#63")
-        print(binascii.hexlify(msg.data))
-        print("sending my own message")
-        sleep(5)
-        t = time() + 3
-
-        print("error inducing")
-
-        #induce_JSM_error(bus)
-        while t > time():
-
-
-            sleep(0.001)
-            c1 = build_frame("#9c")
-            c = struct.pack('B'* len(c1), c1)
-            print (type(msg.data))
-            print (type(c))
-
-            msg.data  =c
-
-            bus.send(msg)
 
 
 
-
-            #a = array.array('B', build_frame("#9c"))
-
-            #a = array.array('B', [156,0])
-            #print("arrays be hand")
-            #print(binascii.hexlify(a))
-            #b = msg.data
-            #print("array from msg")
-            #print(binascii.hexlify(b))
-            #print ("array from lib")
-            #a1 = build_frame("#9c00")
-            #a = array.array('B',a1)
-
-            #msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
-            #bus.send(msg1)
-            #bus.send(msg)
-        print("done")
-
-
-# bus.send(stop)
-# bus.send(stop)
-
-# bus.send(stop)
-
-str = build_frame("181C0100#105a205b00000000")
