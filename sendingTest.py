@@ -42,6 +42,16 @@ while 0 == 0:
         #induce_JSM_error(bus)
         while t > time():
             sleep(0.001)
+            a1 = build_frame("9c00")
+            a = array.array('B', a1)
+            
+
+            bus.send(msg1)
+            msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
+
+
+
+
             #a = array.array('B', build_frame("#9c"))
 
             #a = array.array('B', [156,0])
@@ -56,7 +66,7 @@ while 0 == 0:
 
             #msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             #bus.send(msg1)
-            bus.send(msg)
+            #bus.send(msg)
         print("done")
         sleep(5)
 
