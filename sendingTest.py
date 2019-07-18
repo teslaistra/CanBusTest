@@ -36,7 +36,7 @@ while 0 == 0:
             sleep(0.01)
 
 
-            a = array.array('B', [0, 156])
+            a = array.array('B', [0, 157])
             b = msg.data
             msg1 = can.Message(arbitration_id=33554432, data = a, is_extended_id=True)
             if msg.data == msg1.data: print ("true")
