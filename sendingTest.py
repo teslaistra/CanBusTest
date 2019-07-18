@@ -23,7 +23,8 @@ while 0 ==0:
             print ("got!")
             errmsg = can.Message(arbitration_id=int("0c000000",16))
             for i in range(0,3):
-                bus.send(errmsg)
+                print ()
+                #bus.send(errmsg)
             sleep(3)
             time1 = time() + 2
             while time1 > time():
