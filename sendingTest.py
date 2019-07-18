@@ -53,10 +53,10 @@ while 0 == 0:
             #print ("array from lib")
             a1 = build_frame("#9c00")
             a = array.array('B',a1)
-            
+
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
             bus.send(msg1)
-            bus.send(msg)
+            #bus.send(msg)
         print("done")
         sleep(5)
         break
