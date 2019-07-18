@@ -12,7 +12,7 @@ msg = bus.recv()
 def induce_JSM_error(cansocket):
     for i in range(0, 3):
         cansend(cansocket, '0c000000#')
-
+print ("alive1")
 
 # print(map(ord, msg.data))
 # print(map(ord, msg.arbitration_id))
@@ -26,6 +26,8 @@ while 1 == 0:
     if (msg.arbitration_id == 33554432):
         print(binascii.hexlify(msg.data))
 while 0 == 0:
+    print ("alive1")
+
     msg = bus.recv()
     print(binascii.hexlify(msg.data)[0:2])
 
@@ -44,7 +46,7 @@ while 0 == 0:
             sleep(0.001)
             a1 = build_frame("9c00")
             a = array.array('B', a1)
-            
+
 
             bus.send(msg1)
             msg1 = can.Message(arbitration_id=33554432, data=a, is_extended_id=True)
