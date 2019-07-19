@@ -15,7 +15,9 @@ def induce_JSM_error(cansocket):
 
 while 0==0:
     msg = bus.recv()
-    print(binascii.hexlify(msg.data)[0:2])
+    #print(binascii.hexlify(msg.data)[0:2])
 
     if binascii.hexlify(msg.data)[0:2] == "9c":
+        print(binascii.hexlify(msg.data)[0:2])
+        sleep(1)
         break
