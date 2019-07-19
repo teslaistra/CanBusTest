@@ -24,5 +24,5 @@ while 0==0:
 time1 = time() +3
 while time1 > time():
     print(123)
-    sleep(0.005)
+    sleep(0.001)
     bus.send(msg)
