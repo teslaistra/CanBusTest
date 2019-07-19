@@ -32,6 +32,8 @@ while time1 > time:
     bus.send(msgL)
 sleep(3)
 print("sending R")
+print(binascii.hexlify(msg.data))
+print(msg.arbitration_id)
 while time1 > time:
     sleep(0.005)
-    bus.send(msgR)
+    bus.send(msg)
