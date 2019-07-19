@@ -27,6 +27,7 @@ while 0 ==0:
                 print ()
                 bus.send(errmsg)
             sleep(3)
+            print ("asd")
             time1 = time() + 2
             while time1 > time():
                 sleep(0.005)
