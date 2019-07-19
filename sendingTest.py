@@ -21,6 +21,7 @@ while 0==0:
 
     if binascii.hexlify(msg.data)[0:2] == "9c":
         break
+
 msgL = msg
 msgR = msg
 msgR = can.Message(arbitration_id =33554432)#data = bytearray([0,156])
@@ -32,4 +33,5 @@ while time1 > time:
 sleep(3)
 print("sending R")
 while time1 > time:
+    sleep(0.005)
     bus.send(msgR)
