@@ -33,7 +33,8 @@ while 0==0:
                 sleep(3)
 
                 print("msg sending")
-                time1 = time() + 1
-                while time1 > time():
-                    sleep(0.005)
-                    bus.send(msg)
+                while 0==0:
+                    time1 = time() + 1
+                    while time1 > time():
+                        sleep(0.005)
+                        bus.send(msg)
