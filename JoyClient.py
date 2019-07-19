@@ -409,7 +409,7 @@ if __name__ == "__main__":
                 print('using Joystick attached: ' + str(jsdev).split("'")[1])
                 joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,))
                 joyreadthread.start()
-                joy_id = RNET_JSMerror_exploit(cansocket)
+                #joy_id = RNET_JSMerror_exploit(cansocket)
                 joy_id = 02000000
                 speed_range = 00
                 RNETsetSpeedRange(cansocket,speed_range)
