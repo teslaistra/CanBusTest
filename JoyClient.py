@@ -472,12 +472,12 @@ if __name__ == "__main__":
 
             playsongthread = threading.Thread(target=RNETplaysong,args=(cansocket,))
             speed_range = 00
-            #RNETsetSpeedRange(cansocket,speed_range)
+            RNETsetSpeedRange(cansocket,speed_range)
 
 
             sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
             sendjoyframethread.start()
-            #playsongthread.start()
+            playsongthread.start()
 
             if host=='':
                 ipsocket.listen(10)
