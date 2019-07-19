@@ -21,7 +21,7 @@ while 0==0:
         print(binascii.hexlify(msg.data)[0:2])
         sleep(1)
         break
-time1 = time() +3
+time1 = time() +1
 while time1 > time():
     print(123)
     sleep(0.001)
