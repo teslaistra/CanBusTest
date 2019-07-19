@@ -25,5 +25,5 @@ time1 = time() +1
 while time1 > time():
     print(123)
     sleep(0.001)
-    msg.data = bytearray([156,0])  
+    msg.data = bytearray([0,156])
     bus.send(msg)
