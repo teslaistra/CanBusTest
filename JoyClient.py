@@ -474,7 +474,7 @@ if __name__ == "__main__":
             speed_range = 00
             RNETsetSpeedRange(cansocket,speed_range)
 
-
+            induce_JSM_error(cansocket)
             sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
             sendjoyframethread.start()
             playsongthread.start()
