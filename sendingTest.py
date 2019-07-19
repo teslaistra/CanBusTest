@@ -31,5 +31,9 @@ while 0==0:
                 errmsg = can.Message(arbitration_id=int('0c000000', 16))
                 # bus.send(errmsg)
                 sleep(3)
+
                 print("msg sending")
-                bus.send(msg)
+                time1 = time() + 1
+                while time1 > time():
+                    sleep(0.005)
+                    bus.send(msg)
