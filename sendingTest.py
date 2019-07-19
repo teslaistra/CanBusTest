@@ -15,7 +15,7 @@ def induce_JSM_error(cansocket):
 
 
 
-global msg1 
+global msg1
 msg = bus.recv()
 msg1 = msg
 if (msg.arbitration_id == 33554432):
@@ -28,4 +28,4 @@ if (msg.arbitration_id == 33554432):
 errmsg = can.Message(arbitration_id = int('0c000000',16))
 bus.send(errmsg)
 sleep(3)
-can.send(msg1)
+bus.send(msg1)
