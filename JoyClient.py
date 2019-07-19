@@ -361,7 +361,7 @@ def qRNET_JSMerror_exploit(cansocket):
         print("3 x 0c000000# sent")
         return(joy_id)
 
-def qRNETsetSpeedRange(cansocket,speed_range):
+def RNETsetSpeedRange(cansocket,speed_range):
         if speed_range>=0 and speed_range<=0x64:
             cansend(cansocket,'0a040100#'+dec2hex(speed_range,2))
         else:
