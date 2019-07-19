@@ -25,4 +25,4 @@ time1 = time() +3
 while time1 > time():
     print(123)
     sleep(0.01)
-    can.send(msg)
+    bus.send(msg)
