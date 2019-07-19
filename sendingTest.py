@@ -16,12 +16,13 @@ time1 = time() + 3
 while time1 > time():
     msg = bus.recv()
     print(binascii.hexlify(msg.data)[0:2])
-if     binascii.hexlify(msg.data)[0:2] == "9c":
-    print ("got")
-
-
-msgR = can.Message(arbitration_id =33554432, data = bytearray([0,156]), extended_id = True)
-msgL = can.Message(arbitration_id =33554432, data = bytearray([0,100]), extended_id = True)
+while 0==0:
+    if binascii.hexlify(msg.data)[0:2] == "9c":
+        break
+msgL = msg
+msgR = msg
+msgR = can.Message(data = bytearray([0,156]), extended_id = True)#arbitration_id =33554432,
+msgL = can.Message(data = bytearray([0,100]), extended_id = True)
 print("sending L")
 time1 = time()+1
 while time1 > time:
