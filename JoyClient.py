@@ -467,7 +467,9 @@ if __name__ == "__main__":
                 joyreadthread.daemon = True
                 joyreadthread.start()
 
-            joy_id = RNET_JSMerror_exploit(cansocket)
+            #joy_id = RNET_JSMerror_exploit(cansocket)
+            joy_id = "02000000"
+
             playsongthread = threading.Thread(target=RNETplaysong,args=(cansocket,))
             speed_range = 00
             RNETsetSpeedRange(cansocket,speed_range)
