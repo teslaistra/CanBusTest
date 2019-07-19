@@ -17,6 +17,8 @@ while time1 > time():
     msg = bus.recv()
     print(binascii.hexlify(msg.data)[0:2])
 while 0==0:
+    msg = bus.recv()
+
     if binascii.hexlify(msg.data)[0:2] == "9c":
         break
 msgL = msg
