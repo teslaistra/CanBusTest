@@ -23,8 +23,8 @@ while 0==0:
         break
 msgL = msg
 msgR = msg
-msgR = can.Message(data = bytearray([0,156]), extended_id = True)#arbitration_id =33554432,
-msgL = can.Message(data = bytearray([0,100]), extended_id = True)
+msgR = can.Message(arbitration_id =33554432)#data = bytearray([0,156])
+msgL = can.Message(data = bytearray([0,100]))
 print("sending L")
 time1 = time()+1
 while time1 > time:
