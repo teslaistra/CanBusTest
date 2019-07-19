@@ -29,7 +29,7 @@ while 0==0:
                 msg1 = msg
                 print("err")
                 errmsg = can.Message(arbitration_id=int('0c000000', 16))
-                bus.send(errmsg)
+                #bus.send(errmsg)
                 sleep(3)
 
                 print("msg sending")
