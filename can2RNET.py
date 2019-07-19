@@ -116,7 +116,7 @@ def cansend(s,cansendtxt):
         print (out)
         c1 = build_frame("#"+cansplit[1])
         c = bytearray(c1)
-        msg = can.Message(arbitration_id=33554432, data=c)
+        msg = can.Message(arbitration_id=int(cansplit[0],16), data=c)
         print(binascii.hexlify(msg.data))
         print (msg.arbitration_id)
         s.send(msg)

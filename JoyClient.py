@@ -349,7 +349,7 @@ def induce_JSM_error(cansocket):
     for i in range(0,3):
         cansend(cansocket,'0c000000#')
 
-def RNET_JSMerror_exploit(cansocket):
+def qRNET_JSMerror_exploit(cansocket):
         print("Waiting for JSM heartbeat")
         canwait(cansocket,"03C30F0F:1FFFFFFF")
         t=time()+0.20
@@ -361,7 +361,7 @@ def RNET_JSMerror_exploit(cansocket):
         print("3 x 0c000000# sent")
         return(joy_id)
 
-def RNETsetSpeedRange(cansocket,speed_range):
+def qRNETsetSpeedRange(cansocket,speed_range):
         if speed_range>=0 and speed_range<=0x64:
             cansend(cansocket,'0a040100#'+dec2hex(speed_range,2))
         else:
@@ -373,7 +373,7 @@ def RNETshortBeep(cansocket):
 def RNETplaysong(cansocket):
         cansend(cansocket,"181C0100#2056080010560858")
         sleep(.77)
-        #cansend(cansocket,"181C0100#105a205b00000000")
+        cansend(cansocket,"181C0100#105a205b00000000")
 
 def watch_and_wait():
         while threading.active_count() > 0:
@@ -472,12 +472,12 @@ if __name__ == "__main__":
 
             playsongthread = threading.Thread(target=RNETplaysong,args=(cansocket,))
             speed_range = 00
-            RNETsetSpeedRange(cansocket,speed_range)
+            #RNETsetSpeedRange(cansocket,speed_range)
 
 
             sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
             sendjoyframethread.start()
-            playsongthread.start()
+            #playsongthread.start()
 
             if host=='':
                 ipsocket.listen(10)
