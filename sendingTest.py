@@ -27,7 +27,6 @@ while 0==0:
             if binascii.hexlify(msg.data)[0:2] == "9c":
                 print ("got!")
                 msg1 = msg
-                break
                 print("err")
                 errmsg = can.Message(arbitration_id=int('0c000000', 16))
                 # bus.send(errmsg)
