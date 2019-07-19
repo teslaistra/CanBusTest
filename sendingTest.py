@@ -19,7 +19,7 @@ def induce_JSM_error(cansocket):
 msg = bus.recv()
 
 if (msg.arbitration_id == 33554432):
-      while 0==0:
+    while 0==0:
         msg = bus.recv()
 
         if binascii.hexlify(msg.data)[0:2] == "9c":
