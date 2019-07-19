@@ -315,7 +315,7 @@ def dec2hex(dec,hexlen):  #convert dec to hex with leading 0s and no '0x'
     return ('0'*hexlen+h)[l:l+hexlen]
 
 def send_joystick_canframe(s,joy_id):
-        mintime = 0.001
+        mintime = 0.01
         nexttime = time() + mintime
         priorjoyx=joyx
         priorjoyy=joyy
