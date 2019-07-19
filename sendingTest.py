@@ -21,14 +21,13 @@ while 0 ==0:
     if (msg.arbitration_id == 33554432):
         if binascii.hexlify(msg.data)[0:2] == "9c":
             print ("got!")
+
             errmsg = can.Message(arbitration_id=int("0c000000",16))
             for i in range(0,3):
                 print ()
-                #bus.send(errmsg)
+                bus.send(errmsg)
             sleep(3)
             time1 = time() + 2
             while time1 > time():
                 sleep(0.005)
                 bus.send(msg)
-
-
