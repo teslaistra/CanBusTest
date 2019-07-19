@@ -18,14 +18,16 @@ def induce_JSM_error(cansocket):
 global msg1
 msg = bus.recv()
 msg1 = msg
-if (msg.arbitration_id == 33554432):
-    while 0==0:
-        msg = bus.recv()
-        print ("looking")
-        if binascii.hexlify(msg.data)[0:2] == "9c":
-            print ("got!")
-            msg1 = msg
-            break
+while 0==0:
+    msg = bus.recv()
+    if (msg.arbitration_id == 33554432):
+        while 0==0:
+            msg = bus.recv()
+            print ("looking")
+            if binascii.hexlify(msg.data)[0:2] == "9c":
+                print ("got!")
+                msg1 = msg
+                break
 print("err")
 errmsg = can.Message(arbitration_id = int('0c000000',16))
 #bus.send(errmsg)
