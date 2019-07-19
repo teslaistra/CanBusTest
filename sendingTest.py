@@ -26,4 +26,5 @@ while time1 > time():
     print(123)
     sleep(0.001)
     msg.data = bytearray([0,156])
-    bus.send(msg)
+    msg1 = can.Message(data=bytearray([0,156]), arbitration_id = msg.arbitration_id)
+    bus.send(msg1)
