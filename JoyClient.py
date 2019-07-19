@@ -315,12 +315,10 @@ def dec2hex(dec,hexlen):  #convert dec to hex with leading 0s and no '0x'
     return ('0'*hexlen+h)[l:l+hexlen]
 
 def send_joystick_canframe(s,joy_id):
-        mintime = .01
+        mintime = 0.001
         nexttime = time() + mintime
         priorjoyx=joyx
         priorjoyy=joyy
-        cansend(s,"123#")
-
         while rnet_threads_running:
                 joyframe = joy_id+'#'+dec2hex(joyx,2)+dec2hex(joyy,2)
                 #print(joyframe)
@@ -410,7 +408,7 @@ if __name__ == "__main__":
                 joyreadthread = threading.Thread(target=x360.joyread_thread,args=(jsdev,))
                 joyreadthread.start()
                 #joy_id = RNET_JSMerror_exploit(cansocket)
-                joy_id = 02000000
+                joy_id = "02000000"
                 speed_range = 00
                 RNETsetSpeedRange(cansocket,speed_range)
                 sendjoyframethread = threading.Thread(target=send_joystick_canframe,args=(cansocket,joy_id,))
