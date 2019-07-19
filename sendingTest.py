@@ -21,3 +21,7 @@ while 0==0:
         print(binascii.hexlify(msg.data)[0:2])
         sleep(1)
         break
+time1 = time() +3
+while time1 > time:
+    sleep(0.01)
+    can.send(msg)
