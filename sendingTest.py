@@ -28,10 +28,9 @@ while 0==0:
                 print ("got!")
                 msg1 = msg
                 break
-    break
-print("err")
-errmsg = can.Message(arbitration_id = int('0c000000',16))
-#bus.send(errmsg)
-sleep(3)
-print("msg sending")
-bus.send(msg)
+                print("err")
+                errmsg = can.Message(arbitration_id=int('0c000000', 16))
+                # bus.send(errmsg)
+                sleep(3)
+                print("msg sending")
+                bus.send(msg)
