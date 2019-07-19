@@ -28,7 +28,7 @@ if (msg.arbitration_id == 33554432):
             break
 print("err")
 errmsg = can.Message(arbitration_id = int('0c000000',16))
-bus.send(errmsg)
+#bus.send(errmsg)
 sleep(3)
 print("msg sending")
 bus.send(msg)
