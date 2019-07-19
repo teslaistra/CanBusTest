@@ -15,6 +15,7 @@ def induce_JSM_error(cansocket):
 
 while 0==0:
     msg = bus.recv
+    print (msg.arbitration_id)
     if msg.arbitration_id == 33554432 and binascii.hexlify(msg.data)[0:2] == "9c":
         time1 = time() + 1
         while time1 > time:
