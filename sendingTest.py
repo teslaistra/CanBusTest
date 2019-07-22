@@ -17,5 +17,5 @@ while 0==0:
 
     if str(msg.arbitration_id) == '33554432':
         msg = bus.recv()
-        print(msg.arbitration_id)
+        print(str(msg.arbitration_id))
         print(binascii.hexlify(msg.data)[0:2])
