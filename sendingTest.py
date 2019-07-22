@@ -15,7 +15,6 @@ def induce_JSM_error(cansocket):
 
 while 0==0:
     msg = bus.recv()
-
-    if str(msg.arbitration_id) != '33554432' and str(msg.arbitration_id) != '472908036':
+    if str(msg.arbitration_id) != '33554432' and str(msg.arbitration_id) != '472908036' and str(msg.arbitration_id) != '470548736' :
         print(str(msg.arbitration_id))
         print(binascii.hexlify(msg.data)[0:2])
