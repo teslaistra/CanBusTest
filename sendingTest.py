@@ -18,4 +18,4 @@ while 0==0:
     if str(msg.arbitration_id) not in list:
         print()
         print(str(msg.arbitration_id))
-        print(binascii.hexlify(msg.data)[0:2])
+        print(binascii.hexlify(msg.data))
