@@ -21,3 +21,4 @@ while 0==0:
         print(binascii.hexlify(msg.data)[0:2])
     else:
         print(str(msg.arbitration_id) + " != 33554432")
+        print(type(msg.arbitration_id))
