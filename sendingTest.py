@@ -14,6 +14,7 @@ def induce_JSM_error(cansocket):
         cansend(cansocket, '0c000000#')
 
 while 0==0:
+    print(str(msg.arbitration_id))
 
     if str(msg.arbitration_id) == '33554432':
         msg = bus.recv()
