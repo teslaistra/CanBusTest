@@ -22,13 +22,15 @@ def print_thread(bus):
 
         msg = bus.recv()
         a = message_names.get(str(msg.arbitration_id))
+        print(a)
         list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
         if a != None:
-            print('recieved : ')
-            print(message_names[str(msg.arbitration_id)])
-            print('with data: ')
-            print(binascii.hexlify(msg.data))
-            print(' ')
+            print()
+            #print('recieved : ')
+            #print(message_names[str(msg.arbitration_id)])
+            #print('with data: ')
+            #print(binascii.hexlify(msg.data))
+            #print(' ')
         else:
             print('Adding')
             d1 = {str(msg.arbitration_id) : 'new'}
