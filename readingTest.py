@@ -9,17 +9,19 @@ import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 
-def print_thread(dict, bus):
+def print_thread(bus):
     global running
+    global message_names
+
     while running == True:
         msg = bus.recv()
-        if dict[str(msg.arbitration_id)] != None:
+        if message_names[str(msg.arbitration_id)] != None:
             print('recieved: ')
-            print(dict[str(msg.arbitration_id)])
+            print(message_names[str(msg.arbitration_id)])
             print(' ')
         else:
             d1 = {str(msg.arbitration_id) : 'new'}
-            dict.update(d1)
+            message_names.update(d1)
 
 
 
@@ -39,13 +41,13 @@ message_names = {
 
 }
 
-global running
 running = True
 
-sendjoyframethread = threading.Thread(target=print_thread,args=(bus,message_names))
+sendjoyframethread = threading.Thread(target=print_thread, args=(bus, message_names))
 sendjoyframethread.start()
 time1 = time()
 while time < time1:
     global running
     running = True
 running = False
+print(message_names)
