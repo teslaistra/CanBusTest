@@ -19,19 +19,15 @@ import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 
-cansend(bus, '0061#50000002')
-sleep(0.01)
-cansend(bus, '0061#70000009')
-sleep(0.01)
-cansend(bus, '0061#80000010')
-sleep(0.01)
-cansend(bus, '0061#10010002')
-sleep(0.01)
-cansend(bus, '0061#20010000')
-sleep(0.01)
+
 cansend(bus, '0061#80010080')
 sleep(0.01)
-cansend(bus,'C180200#0203')
+
+cansend(bus,'C180200#0202')
 sleep(0.01)
+cansend(bus,'C180201#210101')
+sleep(0.01)
+
 cansend(bus,'C180201#010101')
+
 print('send all')
