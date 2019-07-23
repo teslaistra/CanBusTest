@@ -48,7 +48,7 @@ message_names = {
     '97': 'smth connected with joy mode',
     '202899968': 'seen after mode change - 1',
     '202899969': 'seen after mode change - 2',
-    '': '',
+    '98': 'ne znaj',
     '': '',
     '': '',
     '': '',
