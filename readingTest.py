@@ -14,25 +14,23 @@ def print_thread(bus):
     global running
     global message_names
     global b
-    for msg in bus:
-        global running
-        global message_names
-        global b
-    #msg = bus.recv()
-        a = message_names.get(str(msg.arbitration_id))
-        list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
-        if a != None and  str(msg.arbitration_id) not in list:
-            print('recieved : ')
-            print(message_names[str(msg.arbitration_id)])
-            print('with data: ')
-            print(binascii.hexlify(msg.data))
-            print(' ')
-        elif a == None:
-            print('Adding')
-            d1 = {str(msg.arbitration_id) : 'new'}
-            print(d1)
-            print(' ')
-            message_names.update(d1)
+    
+    msg = bus.recv()
+    a = message_names.get(str(msg.arbitration_id))
+    list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
+    if a != None and  str(msg.arbitration_id) not in list:
+        print('recieved : ')
+        print(message_names[str(msg.arbitration_id)])
+        print('with data: ')
+        print(binascii.hexlify(msg.data))
+        print(' ')
+        b.append = msg
+    elif a == None:
+        print('Adding')
+        d1 = {str(msg.arbitration_id) : 'new'}
+        print(d1)
+        print(' ')
+        message_names.update(d1)
 
 
 
