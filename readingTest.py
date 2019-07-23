@@ -10,14 +10,11 @@ bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 global running
 running = True
-global b
-b = []
 def print_thread(bus):
     global running
     global message_names
     global b
     msg = bus.recv()
-    b.append(msg)
     a = message_names.get(str(msg.arbitration_id))
     list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
     if a != None and  str(msg.arbitration_id) not in list:
@@ -25,11 +22,16 @@ def print_thread(bus):
         print(message_names[str(msg.arbitration_id)])
         print('with data: ')
         print(binascii.hexlify(msg.data))
+        print(' ')
 
 
     else:
+        print('Adding')
         d1 = {str(msg.arbitration_id) : 'new'}
+        print(d1)
+        print(' ')
         message_names.update(d1)
+
 
 
 
@@ -66,6 +68,3 @@ while time() < time1:
     print_thread(bus)
 running = False
 print(message_names)
-for i in b:
-    sleep(0.01)
-    bus.send(i)
