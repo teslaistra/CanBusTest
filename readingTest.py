@@ -12,14 +12,10 @@ global bus
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
-    print('sf')
-
     global running
     global message_names
     global b
-    print('sf')
     while running:
-
         msg = bus.recv()
         a = message_names.get(str(msg.arbitration_id))
         print(a)
