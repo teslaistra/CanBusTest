@@ -66,7 +66,7 @@ if __name__ == "__main__":
     print("dd")
     g = [1,2,3]
     global bus
-    sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
-    sendjoyframethread.start()
+    read_thread = threading.Thread(target=print_thread, args=(bus,))
+    read_thread.start()
     print(threading.active_count())
     print("sd")
