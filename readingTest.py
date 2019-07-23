@@ -14,6 +14,8 @@ def print_thread(bus):
     global running
     global message_names
     global b
+    while running:
+        print("aa")
     b = []
     msg = bus.recv()
     a = message_names.get(str(msg.arbitration_id))
@@ -45,10 +47,10 @@ message_names = {
     '33554432': 'drive control',
     '404488192': 'beep',
     '96': 'joy mode',
-    '97': 'smth connected with joy mode',
+    '97': 'smth connected with joy mode 1',
     '202899968': 'seen after mode change - 1',
     '202899969': 'seen after mode change - 2',
-    '98': 'ne znaj',
+    '98': 'smth connected with joy mode 2',
     '': '',
     '': '',
     '': '',
@@ -60,10 +62,4 @@ running = True
 
 sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
 sendjoyframethread.start()
-time1 = time() + 10
-while time() < time1:
-    global running
-    running = True
-    print_thread(bus)
-running = False
-print(message_names)
+
