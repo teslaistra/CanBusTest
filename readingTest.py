@@ -1,13 +1,21 @@
 import time
 import can
 from can2RNET import *
+import socket, sys, os, struct, array
+from time import *
+from fcntl import ioctl
+import select
+import threading
+from can2RNET import *
+import signal
 import threading
 bustype = 'socketcan'
 channel = 'can0'
+
 import binascii
 import array
+
 bus = can.interface.Bus(channel=channel, bustype=bustype)
-msg = bus.recv()
 
 def print_thread(bus):
     global t
