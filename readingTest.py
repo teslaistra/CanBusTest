@@ -16,7 +16,6 @@ def print_thread(bus):
     global b
     while running:
         print("aa")
-    b = []
     msg = bus.recv()
     a = message_names.get(str(msg.arbitration_id))
     list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
@@ -58,8 +57,11 @@ message_names = {
 
 }
 
-running = True
 
-sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
-sendjoyframethread.start()
+if __name__ == "__main__":
+    global running
+    running = True
+
+    sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
+    sendjoyframethread.start()
 
