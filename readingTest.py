@@ -1,7 +1,7 @@
 import time
 import can
 from can2RNET import *
-
+import threading
 bustype = 'socketcan'
 channel = 'can0'
 import binascii
