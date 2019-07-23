@@ -12,6 +12,8 @@ import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
+    print('sf')
+
     global t
     global message_names
     global b
