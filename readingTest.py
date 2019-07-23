@@ -9,7 +9,6 @@ import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 
-running = True
 def print_thread(bus):
     global running
     global message_names
@@ -61,7 +60,7 @@ message_names = {
 if __name__ == "__main__":
     global running
     running = True
-
+    print("dd")
     sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
     sendjoyframethread.start()
-
+    print("sd")
