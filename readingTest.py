@@ -13,15 +13,12 @@ bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
     global running
-    global b
     while running:
-        global message_names
         msg = bus.recv()
         a = message_names.get(str(msg.arbitration_id))
 
         if a != None:
-            b=3
-            #print('recieved : ')
+            print('recieved : ')
             #print(message_names[str(msg.arbitration_id)])
             #print('with data: ')
             #print(binascii.hexlify(msg.data))
@@ -76,6 +73,11 @@ message_names = {
     '202899968': 'seen after mode change - 1',
     '202899969': 'seen after mode change - 2',
     '98': 'smth connected with joy mode 2',
+
+    '2': 'seen at poweroff',
+    '12': 'JSMtx test canbus connection',
+    '': '',
+    '': '',
     '': '',
     '': '',
     '': '',
