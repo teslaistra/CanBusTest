@@ -29,7 +29,7 @@ def print_thread(bus):
             print('with data: ')
             print(binascii.hexlify(msg.data))
             print(' ')
-        elif a == None:
+        else:
             print('Adding')
             d1 = {str(msg.arbitration_id) : 'new'}
             print(d1)
