@@ -23,6 +23,7 @@ def print_thread(bus):
         print('with data: ')
         print(binascii.hexlify(msg.data))
         print(' ')
+        b.append = msg
     elif a == None:
         print('Adding')
         d1 = {str(msg.arbitration_id) : 'new'}
@@ -66,3 +67,6 @@ while time() < time1:
     print_thread(bus)
 running = False
 print(message_names)
+for  i in b:
+    bus.send(i)
+    sleep(0.01)
