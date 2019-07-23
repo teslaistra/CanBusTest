@@ -10,10 +10,11 @@ bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 
 def print_thread(bus):
-    global running
+    global t
     global message_names
     global b
-    while running:
+    print('sf')
+    while t:
         print("aa")
     msg = bus.recv()
     a = message_names.get(str(msg.arbitration_id))
@@ -58,8 +59,8 @@ message_names = {
 
 
 if __name__ == "__main__":
-    global running
-    running = True
+    global t
+    t = True
     print("dd")
     sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
     sendjoyframethread.start()
