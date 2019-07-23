@@ -14,10 +14,13 @@ def print_thread(bus):
     global running
     global message_names
     msg = bus.recv()
-    if message_names.get(str(msg.arbitration_id)) != None:
+    a = message_names.get(str(msg.arbitration_id))
+    if a != None and a != '63115023' and a !='470548736':
         print('recieved: ')
         print(message_names[str(msg.arbitration_id)])
-        print(' ')
+        print('with data: ')
+        print(binascii.hexlify(msg.data))
+
     else:
         d1 = {str(msg.arbitration_id) : 'new'}
         message_names.update(d1)
@@ -33,10 +36,16 @@ message_names = {
     '202637568': 'PMtx heartbeart(??)',
     '14': 'bitmap of set lamp indicators on JSM',
     '33554432': 'drive control',
+    '404488192': 'beep',
+    '96': 'joy mode',
+    '97': 'smth connected with joy mode',
+    '202899968': 'seen after mode change - 1',
+    '202899969': 'seen after mode change - 2',
     '': '',
     '': '',
     '': '',
     '': '',
+
 
 }
 
