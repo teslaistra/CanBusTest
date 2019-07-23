@@ -16,6 +16,7 @@ def print_thread(bus):
 
     while running == True:
         msg = bus.recv()
+        print('alive')
         if message_names[str(msg.arbitration_id)] != None:
             print('recieved: ')
             print(message_names[str(msg.arbitration_id)])
@@ -46,7 +47,7 @@ running = True
 
 sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
 sendjoyframethread.start()
-time1 = time() + 30
+time1 = time() + 10
 while time() < time1:
     print('ww')
     global running
