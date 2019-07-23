@@ -8,7 +8,7 @@ channel = 'can0'
 
 import binascii
 import array
-
+global bus 
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
