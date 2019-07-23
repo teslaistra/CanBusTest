@@ -8,7 +8,7 @@ import binascii
 import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
-global running
+
 running = True
 def print_thread(bus):
     global running
