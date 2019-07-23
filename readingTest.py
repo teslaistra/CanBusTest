@@ -13,8 +13,9 @@ running = True
 def print_thread(bus):
     global running
     global message_names
+    print(running)
 
-    while running == True:
+    while running:
         msg = bus.recv()
         print('alive')
         if message_names[str(msg.arbitration_id)] != None:
