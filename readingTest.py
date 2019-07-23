@@ -47,7 +47,7 @@ running = True
 sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
 sendjoyframethread.start()
 time1 = time() + 30
-while time < time1:
+while time() < time1:
     print('ww')
     global running
     running = True
