@@ -8,7 +8,7 @@ channel = 'can0'
 
 import binascii
 import array
-global bus 
+global bus
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
@@ -68,5 +68,5 @@ if __name__ == "__main__":
     global bus
     sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
     sendjoyframethread.start()
-
+    print(threading.active_count())
     print("sd")
