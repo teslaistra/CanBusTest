@@ -1,13 +1,7 @@
 import time
 import can
 from can2RNET import *
-import socket, sys, os, struct, array
-from time import *
-from fcntl import ioctl
-import select
-import threading
-from can2RNET import *
-import signal
+
 import threading
 bustype = 'socketcan'
 channel = 'can0'
@@ -61,8 +55,6 @@ message_names = {
     '': '',
     '': '',
     '': '',
-
-
 }
 
 
@@ -70,6 +62,6 @@ if __name__ == "__main__":
     global t
     t = True
     print("dd")
-    sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
+    sendjoyframethread = threading.Thread(target=print_thread, args=bus)
     sendjoyframethread.start()
     print("sd")
