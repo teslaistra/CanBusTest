@@ -21,7 +21,7 @@ def print_thread(bus):
         print(a)
         list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
         if a != None:
-            print()
+            b=3
             #print('recieved : ')
             #print(message_names[str(msg.arbitration_id)])
             #print('with data: ')
