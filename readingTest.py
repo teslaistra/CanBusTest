@@ -13,13 +13,12 @@ bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 def print_thread(bus):
     global running
-    global message_names
     global b
     while running:
+        global message_names
         msg = bus.recv()
         a = message_names.get(str(msg.arbitration_id))
-        print(a)
-        list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
+
         if a != None:
             b=3
             #print('recieved : ')
