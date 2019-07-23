@@ -15,6 +15,9 @@ def print_thread(bus):
     global message_names
     global b
     for msg in bus:
+        global running
+        global message_names
+        global b
     #msg = bus.recv()
         a = message_names.get(str(msg.arbitration_id))
         list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
