@@ -15,7 +15,7 @@ def print_thread(bus):
     global message_names
     msg = bus.recv()
     a = message_names.get(str(msg.arbitration_id))
-    if a != None and a != '63115023' and a !='470548736':
+    if a != None and a != '63115023' and a !='470548736' and a != '33554432':
         print('recieved: ')
         print(message_names[str(msg.arbitration_id)])
         print('with data: ')

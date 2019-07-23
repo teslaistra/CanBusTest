@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04a47d46-09b5-4a68-ad96-ae2fdf1f9a55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/readingTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/readingTest.py" afterDir="false" />
-    </list>
+    <list default="true" id="04a47d46-09b5-4a68-ad96-ae2fdf1f9a55" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readingTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="863">
+              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -191,7 +189,7 @@
       <workItem from="1563353726308" duration="24686000" />
       <workItem from="1563440154041" duration="46110000" />
       <workItem from="1563805403585" duration="4886000" />
-      <workItem from="1563871033970" duration="5719000" />
+      <workItem from="1563871033970" duration="5982000" />
     </task>
     <task id="LOCAL-00001" summary="V1">
       <created>1563373061831</created>
@@ -211,7 +209,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81401000" />
+    <option name="totallyTimeSpent" value="81664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
@@ -382,8 +380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readingTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="863">
+          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
