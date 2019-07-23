@@ -43,9 +43,9 @@ message_names = {
 
 running = True
 
-sendjoyframethread = threading.Thread(target=print_thread, args=(bus, message_names))
+sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
 sendjoyframethread.start()
-time1 = time()
+time1 = time() + 30 
 while time < time1:
     global running
     running = True
