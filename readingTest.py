@@ -63,6 +63,8 @@ if __name__ == "__main__":
     t = True
     print("dd")
     g = [1,2,3]
-    sendjoyframethread = threading.Thread(target=print_thread, args=g)
+
+    sendjoyframethread = threading.Thread(target=print_thread, args=bus)
     sendjoyframethread.start()
+
     print("sd")
