@@ -18,7 +18,7 @@ def print_thread(bus):
     while running:
         msg = bus.recv()
         print('alive')
-        if message_names.get[str(msg.arbitration_id)] != None:
+        if message_names.get(str(msg.arbitration_id)) != None:
             print('recieved: ')
             print(message_names[str(msg.arbitration_id)])
             print(' ')
