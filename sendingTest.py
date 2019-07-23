@@ -9,4 +9,4 @@ import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
 
-cansend(bus, '96#40000000')
+cansend(bus, '0060#40000000')
