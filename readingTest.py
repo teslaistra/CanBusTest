@@ -8,7 +8,8 @@ import binascii
 import array
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 msg = bus.recv()
-
+global running
+running = True
 def print_thread(bus):
     global running
     global message_names
@@ -45,7 +46,7 @@ running = True
 
 sendjoyframethread = threading.Thread(target=print_thread, args=(bus))
 sendjoyframethread.start()
-time1 = time() + 30 
+time1 = time() + 30
 while time < time1:
     global running
     running = True
