@@ -18,7 +18,7 @@ def print_thread(bus):
     msg = bus.recv()
     a = message_names.get(str(msg.arbitration_id))
     list = ['472908036', '470548736', '63115023', '338690304', '202637824', '202637568', '14', '33554432']
-    if a != None and  str(msg.arbitration_id) not in list:
+    if  str(msg.arbitration_id) not in list:
         print('recieved : ')
         print(message_names[str(msg.arbitration_id)])
         print('with data: ')
