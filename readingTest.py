@@ -52,5 +52,6 @@ time1 = time() + 10
 while time() < time1:
     global running
     running = True
+    print_thread(bus)
 running = False
 print(message_names)
