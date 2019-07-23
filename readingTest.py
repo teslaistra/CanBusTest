@@ -13,18 +13,14 @@ running = True
 def print_thread(bus):
     global running
     global message_names
-    print(running)
-
-    while running:
-        msg = bus.recv()
-        print('alive')
-        if message_names.get(str(msg.arbitration_id)) != None:
-            print('recieved: ')
-            print(message_names[str(msg.arbitration_id)])
-            print(' ')
-        else:
-            d1 = {str(msg.arbitration_id) : 'new'}
-            message_names.update(d1)
+    msg = bus.recv()
+    if message_names.get(str(msg.arbitration_id)) != None:
+        print('recieved: ')
+        print(message_names[str(msg.arbitration_id)])
+        print(' ')
+    else:
+        d1 = {str(msg.arbitration_id) : 'new'}
+        message_names.update(d1)
 
 
 
