@@ -67,4 +67,5 @@ while time() < time1:
 running = False
 print(message_names)
 for i in b:
+    sleep(0.01)
     bus.send(i)
