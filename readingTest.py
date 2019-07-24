@@ -27,7 +27,7 @@ def print_thread(bus):
         msg = bus.recv()
         a = None
         a = message_names.get(str(dec2hex(msg.arbitration_id,8)))
-        print(a)
+        print(str(dec2hex(msg.arbitration_id,8)))
         if a != None:
             print('recieved : ')
             print(message_names[str(dec2hex(msg.arbitration_id,8))])
