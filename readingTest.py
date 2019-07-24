@@ -12,7 +12,7 @@ global bus
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 
-def dec2hex(self, dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
+def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
     h = hex(int(dec))[2:]
     l = len(h)
     if h[l - 1] == "L":
