@@ -68,32 +68,19 @@ drive_messages = {
 }
 
 message_names = {
-
+ 
 }
 
 message_names1 = {
-    '472908036' : 'distance counter',
-    '470548736': 'battery counter',
-    '63115023':'device heartbeat',
-    '338690304': 'PMtx drive motor current',
-    '202637824': 'PMtx heartbeart(??)',
-    '202637568': 'PMtx heartbeart(??)',
-    '14': 'bitmap of set lamp indicators on JSM',
-    '33554432': 'drive control',
-    '404488192': 'beep',
-    '96': 'joy mode',
-    '97': 'smth connected with joy mode 1',
-    '202899968': 'seen after mode change - 1',
-    '202899969': 'seen after mode change - 2',
-    '98': 'smth connected with joy mode 2',
+ '1c0c0100': 'JSMrx battery power level in % Xx = 0x00 - 0x64 -p',
+ '14300100': 'PMtx drive motor current -p',
+ '03c30f0f': 'JSMtx device heartbeat -p',
+ '0c140200': 'smth system JSM 1',
+ '02000000': 'JSM frame - drive control ',
+ '1c300104': 'PMtx distance counter',
+ '0000000e': 'serial number',
+ '0c140100': 'smth system JSM 2',
 
-    '2': 'seen at poweroff',
-    '12': 'JSMtx test canbus connection',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
 }
 
 
