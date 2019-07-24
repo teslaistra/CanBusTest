@@ -20,14 +20,19 @@ message_names = {
  '1c300104': 'PMtx distance counter',
  '0000000e': 'serial number',
  '0c140100': 'smth system JSM 2',
-    '181c0000': 'song',
-    '0c180201': 'seen after change mode to angle',
-    '00000062': 'seen after change mode to angle',
-    '00000060': 'seen after change mode to angle',
-    '00000061': 'seen after change mode to angle',
-    '0c180200': 'seen after change mode to angle',
-    '0c180101': 'seen after change mode to drive',
-    '0c180100': 'seen after change mode to drive',
+ '181c0000': 'song',
+ '0c180201': 'seen after change mode to angle',
+ '00000062': 'seen after change mode to angle',
+ '00000060': 'seen after change mode to angle',
+ '00000061': 'seen after change mode to angle',
+ '0c180200': 'seen after change mode to angle',
+ '0c180101': 'seen after change mode to drive',
+ '0c180100': 'seen after change mode to drive',
+ '0c000003': 'unknown',
+ '181c0200': 'song',
+ '1c240001': 'Device is ready. UI is active.',
+ '0c000200': 'unknown'
+
 }
 
 import binascii
@@ -69,7 +74,7 @@ def dict(msg):
 
 
 if __name__ == "__main__":
-    time1 = time() + 5
+    time1 = time() + 10
     while time() < time1:
         msg= bus.recv()
         dict(msg)
