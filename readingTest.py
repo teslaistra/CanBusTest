@@ -21,11 +21,11 @@ def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
         h = '0' + hex(int(dec))[1:]
     return ('0' * hexlen + h)[l:l + hexlen]
 
+
 def print_thread(bus):
     global running
     for msg in bus:
-        print(str(dec2hex(msg.arbitration_id, 8)))
-
+        print(dec2hex(msg.arbitration_id, 8))
         if running:
             a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
             if a != None:
@@ -91,8 +91,7 @@ message_names1 = {
  '02000000': 'JSM frame - drive control ',
  '1c300104': 'PMtx distance counter',
  '0000000e': 'serial number',
- '0c140100': 'smth system JSM 2',
-
+ '0c140100': 'smth system JSM 2'
 }
 
 
