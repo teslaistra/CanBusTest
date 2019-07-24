@@ -39,7 +39,13 @@ message_names = {
  '0c000002': 'right turn button',
  '0c000001': 'left turn button',
  '00000051': 'seen when speed changing',
- '00000050': 'seen when speed changing'
+ '00000050': 'seen when speed changing',
+ '14300101': 'PMtx angle/height motor current',
+ '00000000': 'seen at power off',
+ '00000002': 'seen at power off',
+ '0000000c': 'used by JSM to check for canbus connection',
+ '00000004': 'seen at power off'
+
 }
 
 import binascii
