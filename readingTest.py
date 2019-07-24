@@ -20,12 +20,7 @@ message_names = {
  '1c300104': 'PMtx distance counter',
  '0000000e': 'serial number',
  '0c140100': 'smth system JSM 2',
- '181c0000': 'new',
- '0c180201': 'new',
- '00000062': 'new',
- '00000060': 'new',
- '00000061': 'new',
- '0c180200': 'new'
+
 }
 
 import binascii
