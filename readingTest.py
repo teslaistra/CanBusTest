@@ -68,7 +68,14 @@ drive_messages = {
 }
 
 message_names = {
- 
+'1c0c0100': 'JSMrx battery power level in % Xx = 0x00 - 0x64 -p',
+ '14300100': 'PMtx drive motor current -p',
+ '03c30f0f': 'JSMtx device heartbeat -p',
+ '0c140200': 'smth system JSM 1',
+ '02000000': 'JSM frame - drive control ',
+ '1c300104': 'PMtx distance counter',
+ '0000000e': 'serial number',
+ '0c140100': 'smth system JSM 2',
 }
 
 message_names1 = {
