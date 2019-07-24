@@ -20,7 +20,13 @@ message_names = {
  '1c300104': 'PMtx distance counter',
  '0000000e': 'serial number',
  '0c140100': 'smth system JSM 2',
-
+    '181c0000': 'song',
+    '0c180201': 'seen after change mode to angle',
+    '00000062': 'seen after change mode to angle',
+    '00000060': 'seen after change mode to angle',
+    '00000061': 'seen after change mode to angle',
+    '0c180200': 'seen after change mode to angle'
+    
 }
 
 import binascii
