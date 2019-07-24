@@ -12,7 +12,8 @@ drive_messages = {
 }
 
 message_names = {
-'1c0c0100': 'JSMrx battery power level in % Xx = 0x00 - 0x64 -p',
+
+ '1c0c0100': 'JSMrx battery power level in % Xx = 0x00 - 0x64 -p',
  '14300100': 'PMtx drive motor current -p',
  '03c30f0f': 'JSMtx device heartbeat -p',
  '0c140200': 'smth system JSM 1',
@@ -28,11 +29,17 @@ message_names = {
  '0c180200': 'seen after change mode to angle',
  '0c180101': 'seen after change mode to drive',
  '0c180100': 'seen after change mode to drive',
- '0c000003': 'unknown',
+ '0c000003': 'Blinking button(on the left of panel)',
  '181c0200': 'song',
  '1c240001': 'Device is ready. UI is active.',
- '0c000200': 'unknown'
-
+ '0c000200': 'unknown',
+ '0c000004': 'Lightning Button',
+ '0c040000': 'horn on',
+ '0c040001': 'horn off',
+ '0c000002': 'right turn button',
+ '0c000001': 'left turn button',
+ '00000051': 'seen when speed changing',
+ '00000050': 'seen when speed changing'
 }
 
 import binascii
