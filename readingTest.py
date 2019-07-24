@@ -33,13 +33,12 @@ def print_thread(bus):
             #print('with data: ')
             #print(binascii.hexlify(msg.data))
             #print(' ')
-        elif a == None:
-
+        else:
             print('Adding')
             d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
             print(d1)
             print(' ')
-            message_names.update(d1)
+            new_messages.update(d1)
 
 
 periodic_messages = {
@@ -62,7 +61,9 @@ controlling_messages = {
     '202899969': 'seen after mode change - 2',
     '98': 'smth connected with joy mode 2'
 }
+new_messages = {
 
+}
 drive_messages = {
     '33554432': 'drive control'
 }
@@ -102,4 +103,4 @@ if __name__ == "__main__":
     while time() < time1:
         running = True
     running = False
-    print(message_names)
+    print(new_messages)
