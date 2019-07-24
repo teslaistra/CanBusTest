@@ -24,12 +24,14 @@ def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
 def print_thread(bus):
     global running
     for msg in bus:
+        print(str(dec2hex(msg.arbitration_id, 8)))
+
         if running:
             a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
-            print(str(dec2hex(msg.arbitration_id, 8)))
             if a != None:
-                print('recieved : ')
-                print(message_names[str(dec2hex(msg.arbitration_id, 8))])
+                f = 3
+                #print('recieved : ')
+                #print(message_names[str(dec2hex(msg.arbitration_id, 8))])
                 #print('with data: ')
                 #print(binascii.hexlify(msg.data))
                 #print(' ')
