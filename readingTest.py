@@ -29,7 +29,7 @@ def print_thread(bus):
 
         if a != None:
             print('recieved : ')
-            print(message_names[str(dec2hex(msg.arbitration_id))])
+            print(message_names[str(dec2hex(msg.arbitration_id,8))])
             #print('with data: ')
             #print(binascii.hexlify(msg.data))
             #print(' ')
