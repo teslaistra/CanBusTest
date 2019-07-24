@@ -41,6 +41,8 @@ def print_thread(bus):
                 print(d1)
                 print(' ')
                 new_messages.update(d1)
+        else:
+            break
 
 
 periodic_messages = {
