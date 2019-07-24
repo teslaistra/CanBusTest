@@ -25,8 +25,9 @@ message_names = {
     '00000062': 'seen after change mode to angle',
     '00000060': 'seen after change mode to angle',
     '00000061': 'seen after change mode to angle',
-    '0c180200': 'seen after change mode to angle'
-    
+    '0c180200': 'seen after change mode to angle',
+    '0c180101': 'seen after change mode to drive',
+    '0c180100': 'seen after change mode to drive',
 }
 
 import binascii
