@@ -23,10 +23,10 @@ def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
 
 def print_thread(bus):
     global running
-    if running:
+    while running:
         msg= bus.recv()
         print(dec2hex(msg.arbitration_id, 8))
-        
+
 
 
 def print_thread1(bus):
