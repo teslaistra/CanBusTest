@@ -24,7 +24,6 @@ message_names = {
 
 import binascii
 import array
-global bus
 bus = can.interface.Bus(channel=channel, bustype=bustype)
 
 
@@ -39,21 +38,20 @@ def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
 
 def dict(msg):
     global message_names
-    if running:
-        a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
-        if a != None:
-                f = 3
-                #print('recieved : ')
+    a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
+    if a != None:
+        f = 3
+        print('recieved : ')
                 #print(message_names[str(dec2hex(msg.arbitration_id, 8))])
                 #print('with data: ')
                 #print(binascii.hexlify(msg.data))
                 #print(' ')
-        else:
-            print('Adding')
-            d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
-            print(d1)
-            print(' ')
-            new_messages.update(d1)
+    else:
+        print('Adding')
+        d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
+        print(d1)
+        print(' ')
+        new_messages.update(d1)
 
 
 
@@ -62,7 +60,6 @@ def dict(msg):
 
 
 if __name__ == "__main__":
-    global bus
     time1 = time() + 20
     while time() < time1:
         msg= bus.recv(0.01)
