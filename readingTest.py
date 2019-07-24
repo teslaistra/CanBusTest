@@ -20,6 +20,12 @@ message_names = {
  '1c300104': 'PMtx distance counter',
  '0000000e': 'serial number',
  '0c140100': 'smth system JSM 2',
+ '181c0000': 'new',
+ '0c180201': 'new',
+ '00000062': 'new',
+ '00000060': 'new',
+ '00000061': 'new',
+ '0c180200': 'new'
 }
 
 import binascii
@@ -40,16 +46,17 @@ def dict(msg):
     global message_names
     a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
     if a != None:
-        f = 3
         print('recieved : ')
-                #print(message_names[str(dec2hex(msg.arbitration_id, 8))])
-                #print('with data: ')
-                #print(binascii.hexlify(msg.data))
-                #print(' ')
+        #print(message_names[str(dec2hex(msg.arbitration_id, 8))])
+        #print('with data: ')
+        #print(binascii.hexlify(msg.data))
+        #print(' ')
     else:
         print('Adding')
         d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
         print(d1)
+        print(binascii.hexlify(msg.data))
+
         print(' ')
         new_messages.update(d1)
 
