@@ -23,23 +23,22 @@ def dec2hex(dec, hexlen):  # convert dec to hex with leading 0s and no '0x'
 
 def print_thread(bus):
     global running
-    while running:
-        msg = bus.recv()
-        a = None
-        a = message_names.get(str(dec2hex(msg.arbitration_id,8)))
-        print(str(dec2hex(msg.arbitration_id,8)))
-        if a != None:
-            print('recieved : ')
-            print(message_names[str(dec2hex(msg.arbitration_id,8))])
-            #print('with data: ')
-            #print(binascii.hexlify(msg.data))
-            #print(' ')
-        else:
-            print('Adding')
-            d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
-            print(d1)
-            print(' ')
-            new_messages.update(d1)
+    for msg in bus:
+        if running:
+            a = message_names.get(str(dec2hex(msg.arbitration_id, 8)))
+            print(str(dec2hex(msg.arbitration_id, 8)))
+            if a != None:
+                print('recieved : ')
+                print(message_names[str(dec2hex(msg.arbitration_id, 8))])
+                #print('with data: ')
+                #print(binascii.hexlify(msg.data))
+                #print(' ')
+            else:
+                print('Adding')
+                d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
+                print(d1)
+                print(' ')
+                new_messages.update(d1)
 
 
 periodic_messages = {
