@@ -25,6 +25,7 @@ def print_thread(bus):
     global running
     while running:
         msg = bus.recv()
+        a = None
         a = message_names.get(str(dec2hex(msg.arbitration_id,8)))
         print(a)
         if a != None:
