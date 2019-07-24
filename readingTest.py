@@ -36,7 +36,7 @@ def print_thread(bus):
         elif a == None:
 
             print('Adding')
-            d1 = {str(msg.arbitration_id) : 'new'}
+            d1 = {str(dec2hex(msg.arbitration_id,8)) : 'new'}
             print(d1)
             print(' ')
             message_names.update(d1)
