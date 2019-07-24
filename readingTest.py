@@ -67,7 +67,7 @@ def dict(msg):
 
 
 if __name__ == "__main__":
-    time1 = time() + 20
+    time1 = time() + 5
     while time() < time1:
         msg= bus.recv()
         dict(msg)
